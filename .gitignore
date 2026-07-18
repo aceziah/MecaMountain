@@ -1,0 +1,39 @@
+# Environnement virtuel
+.venv/
+venv/
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Variables d'environnement
+.env
+
+# Base SQLite de développement
+db.sqlite3
+
+# Fichiers statiques générés
+staticfiles/
+
+# Médias (à adapter selon le projet)
+media/
+
+# VS Code (optionnel si tu souhaites partager les réglages)
+.vscode/
+
+# Pytest
+.pytest_cache/
+
+# Couverture de tests
+.coverage
+htmlcov/
+
+# Logs
+*.log
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
