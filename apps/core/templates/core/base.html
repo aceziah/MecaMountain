@@ -1,0 +1,133 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{% static 'css/styles.css' %}">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>
+        {% block title %}
+            Portfolio
+        {% endblock %}
+    </title>
+
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+
+</head>
+
+<body>
+
+<header class="navbar">
+
+    <div class="navbar-container">
+
+        <div class="logo">
+
+
+<div class="logo-icon">
+    <img src="{% static 'images/mountain.svg' %}" alt="Logo MecaMountain">
+</div>
+
+            <div class="logo-text">
+
+                <h2>MecaMountain</h2>
+
+                <p>par Axel D</p>
+
+            </div>
+
+        </div>
+
+        <nav class="navigation">
+
+            <a href="{% url 'core:home' %}">
+                Accueil
+            </a>
+
+            <a href="{% url 'projects:list' %}">
+                Projets
+            </a>
+
+            <a href="#">
+                Randonnées
+            </a>
+
+            <a href="#">
+                Newsletter
+            </a>
+
+            <a href="#">
+                Contact
+            </a>
+
+        </nav>
+
+<button class="theme-toggle">
+
+<svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="22"
+    height="22"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round">
+
+    <circle cx="12" cy="12" r="4"/>
+
+    <path d="M12 2v2"/>
+    <path d="M12 20v2"/>
+
+    <path d="M2 12h2"/>
+    <path d="M20 12h2"/>
+
+    <path d="m4.9 4.9 1.4 1.4"/>
+    <path d="m17.7 17.7 1.4 1.4"/>
+
+    <path d="m19.1 4.9-1.4 1.4"/>
+    <path d="m6.3 17.7-1.4 1.4"/>
+
+</svg>
+
+</button>
+
+    </div>
+
+</header>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<main>
+
+    {% block content %}
+    {% endblock %}
+
+</main>
+
+<footer>
+
+    <p>© 2026 Axel Dupuy</p>
+
+</footer>
+
+</body>
+
+</html>

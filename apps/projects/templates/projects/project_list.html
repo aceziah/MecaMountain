@@ -1,0 +1,21 @@
+{% extends "core/base.html" %}
+
+{% block title %}
+Mes projets
+{% endblock %}
+
+{% block content %}
+
+<h1>Mes projets</h1>
+
+{% for project in projects %}
+
+    {% include "core/components/project_card.html" %}
+
+{% empty %}
+
+    <p>Aucun projet disponible.</p>
+
+{% endfor %}
+
+{% endblock %}

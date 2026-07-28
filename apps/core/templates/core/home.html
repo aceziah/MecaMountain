@@ -1,0 +1,110 @@
+{% extends "core/base.html" %}
+{% load static %}
+
+{% block title %}
+Accueil
+{% endblock %}
+
+{% block content %}
+
+<section class="hero">
+
+    <div class="hero-overlay">
+
+        <div class="hero-container">
+
+            <div class="hero-content">
+
+                <h1 class="hero-title">
+                    Axel DUPUY
+                </h1>
+
+                <h2 class="hero-subtitle">
+                    Ingénieur en Génie Industriel
+                </h2>
+
+                <p class="hero-description">
+                    Passionné par la gestion de projet, l'amélioration continue,
+                    le développement informatique et les nouvelles technologies.
+                    <br>
+                    MecaMountain rassemble mes réalisations, mes expériences et mes projets.
+                </p>
+
+                <div class="hero-buttons">
+
+                    <a href="{% url 'projects:list' %}" class="btn-primary">
+                        Découvrir mes projets
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<hr>
+
+<section>
+
+    <h2>À propos de ce site</h2>
+
+    <p>
+        Ce site a été entièrement développé avec Django dans le but de présenter mon travail,
+        partager mes projets et mettre en avant ma démarche d'apprentissage.
+    </p>
+
+    <p>
+        Vous y retrouverez notamment :
+    </p>
+
+    <ul>
+        <li>Mes projets de développement informatique.</li>
+        <li>Des réalisations en électronique et systèmes embarqués.</li>
+        <li>Mes expériences autour de la randonnée, du trekking et de l'alpinisme.</li>
+    </ul>
+
+</section>
+
+<hr>
+
+<section>
+
+    <h2>Mon approche</h2>
+
+    <p>
+        J'apprécie les projets qui demandent de comprendre un problème dans son ensemble,
+        d'analyser les besoins, puis de concevoir une solution fiable et durable.
+        Cette approche guide aussi bien mes projets professionnels que mes réalisations personnelles.
+    </p>
+
+    <p>
+        Curieux de nature, j'aime apprendre de nouvelles technologies et approfondir
+        continuellement mes connaissances afin de relever des défis toujours plus ambitieux.
+    </p>
+
+</section>
+
+<hr>
+
+<section>
+
+    <h2>Explorer le portfolio</h2>
+
+    <p>
+        Je vous invite à découvrir mes différents projets afin d'en apprendre davantage sur
+        mon parcours, mes compétences et les technologies que j'utilise.
+    </p>
+
+    <p>
+        <a href="{% url 'projects:list' %}">
+            Accéder à la liste des projets
+        </a>
+    </p>
+
+</section>
+
+{% endblock %}

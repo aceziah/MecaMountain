@@ -37,3 +37,17 @@ htmlcov/
 
 # Windows
 Thumbs.db
+
+# Fichiers ajoutés manuellement
+# Fichiers Python compilés
+*.pyc
+
+# Fichiers temporaires
+*.tmp
+
+# Sauvegardes d'éditeur
+*.bak
+
+# Variables d'environnement supplémentaires
+.env.*
+!.env.example

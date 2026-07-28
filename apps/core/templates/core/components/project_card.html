@@ -1,0 +1,73 @@
+<article>
+
+{% if project.thumbnail %}
+
+    <img
+        src="{{ project.thumbnail.url }}"
+        alt="{{ project.title }}"
+        width="300"
+    >
+
+{% endif %}
+    <!-- 
+    On affiche uniquement le titre 
+    <h3>{{ project.title }}</h3>
+    -->
+
+    <h3>
+    <!-- On rend le titre cliquable pour le rediriger vers le projet -->
+    <a href="{% url 'projects:detail' project.slug %}">
+        {{ project.title }}
+    </a>
+    </h3>
+
+
+    <p>
+
+        {{ project.short_description }}
+
+    </p>
+
+    
+<!-- 
+<p>
+    <a href="{% url 'projects:detail' project.slug %}">
+        Aller au détail du projet →
+    </a>
+</p>
+-->
+
+
+
+
+
+    {% if project.category %}
+
+        <strong>
+
+            {{ project.category }}
+
+        </strong>
+
+    {% endif %}
+
+
+    <h4>Technologies</h4>
+
+<ul>
+
+    {% for technology in project.technologies.all %}
+
+        <li>{{ technology.name }}</li>
+
+    {% empty %}
+
+        <li>Aucune technologie.</li>
+
+    {% endfor %}
+
+</ul>
+
+</article>
+
+<hr>
