@@ -2,22 +2,32 @@ from django.contrib import admin
 
 from .models import Project, Technology, ProjectCategory, ProjectImage
 
-# Register your models here.
-# admin.site.register(Project)
+
+# ==========================================================
+# IMAGES DES PROJETS
+# ==========================================================
+
 class ProjectImageInline(admin.TabularInline):
+
     model = ProjectImage
-# Ouvrir un projet --> Django affichera automatiquement une ligne vide pour ajouter une nouvelle image.
+
+    # Une ligne vide pour ajouter une nouvelle image
     extra = 1
-    
+
+
+# ==========================================================
+# PROJETS
+# ==========================================================
+
 @admin.register(Project)
 class ProjectAdmin(admin.ModelAdmin):
+
     list_display = (
         "title",
         "category",
         "status",
         "is_featured",
-        "created_at",
-        "updated_at",
+        "show_on_homepage",
     )
 
     search_fields = (
@@ -29,7 +39,7 @@ class ProjectAdmin(admin.ModelAdmin):
         "category",
         "status",
         "is_featured",
-        "created_at",
+        "show_on_homepage",
     )
 
     prepopulated_fields = {
@@ -41,32 +51,59 @@ class ProjectAdmin(admin.ModelAdmin):
     )
 
     inlines = [
-    ProjectImageInline,
+        ProjectImageInline,
     ]
 
-    ordering = (
-        "-created_at",
-    )
 
+# ==========================================================
+# TECHNOLOGIES
+# ==========================================================
 
 @admin.register(Technology)
 class TechnologyAdmin(admin.ModelAdmin):
-        list_display = ("name", "slug")
-        search_fields = ("name",)
-        prepopulated_fields = {
+
+    list_display = (
+        "name",
+        "slug",
+    )
+
+    search_fields = (
+        "name",
+    )
+
+    prepopulated_fields = {
         "slug": ("name",)
     }
 
-        @admin.register(ProjectCategory)
-        class ProjectCategoryAdmin(admin.ModelAdmin):
-            list_display = ("name", "slug")
-            search_fields = ("name",)
-            prepopulated_fields = {
-            "slug": ("name",)
-        }
-        
+
+# ==========================================================
+# CATÉGORIES
+# ==========================================================
+
+@admin.register(ProjectCategory)
+class ProjectCategoryAdmin(admin.ModelAdmin):
+
+    list_display = (
+        "name",
+        "slug",
+    )
+
+    search_fields = (
+        "name",
+    )
+
+    prepopulated_fields = {
+        "slug": ("name",)
+    }
+
+
+# ==========================================================
+# IMAGES
+# ==========================================================
+
 @admin.register(ProjectImage)
 class ProjectImageAdmin(admin.ModelAdmin):
+
     list_display = (
         "project",
         "title",

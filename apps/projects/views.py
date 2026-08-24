@@ -7,7 +7,7 @@ def project_list(request):
 
     projects = Project.objects.filter(
         is_featured=True
-    ).order_by("-created_at")
+    )
 
     context = {
         "projects": projects,

@@ -1,4 +1,6 @@
 from django.db import models
+from django.core.exceptions import ValidationError
+from django.db.models import Q
 
 
 class Project(models.Model):
@@ -44,6 +46,38 @@ class Project(models.Model):
     )
 
     is_featured = models.BooleanField(default=False)
+
+# permettant l'ajout de la checkbox "Projet visible dans la page d'accueil" au sein de Django admin
+    show_on_homepage = models.BooleanField(
+        default=False,
+        verbose_name="Projet visible sur la page d'accueil"
+    )
+
+# On maximise le nombre de project définit à 4 sur la page d'accueil et de plus, il doit aussi être définit comme visible dans mes projets
+def clean(self):
+    super().clean()
+
+    if self.show_on_homepage and not self.is_featured:
+        raise ValidationError({
+            "show_on_homepage": (
+                "Un projet doit être visible sur le site "
+                "avant de pouvoir être affiché sur la page d'accueil."
+            )
+        })
+
+    if self.show_on_homepage:
+
+        homepage_projects = Project.objects.filter(
+            show_on_homepage=True
+        ).exclude(pk=self.pk)
+
+        if homepage_projects.count() >= 4:
+            raise ValidationError({
+                "show_on_homepage": (
+                    "Maximum de 4 projets peuvent être affichés "
+                    "sur la page d'accueil."
+                )
+            })
 
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)

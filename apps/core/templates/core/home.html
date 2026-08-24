@@ -46,6 +46,293 @@ Accueil
 
 </section>
 
+
+
+
+
+
+<section class="expertise">
+
+    <div class="expertise-container">
+
+        <article class="expertise-card">
+
+            <div class="expertise-icon">
+                <i class="fa-solid fa-code"></i>
+            </div>
+
+            <div class="expertise-text">
+
+                <h3>Développement</h3>
+
+                <p>
+                    Applications, scripts et outils
+                    pour simplifier et automatiser
+                    les processus.
+                </p>
+
+            </div>
+
+        </article>
+
+        <article class="expertise-card">
+
+            <div class="expertise-icon">
+                <i class="fa-solid fa-microchip"></i>
+            </div>
+
+            <div class="expertise-text">
+
+                <h3>Électronique</h3>
+
+                <p>
+                    Systèmes embarqués, capteurs
+                    et projets électroniques
+                    innovants.
+                </p>
+
+            </div>
+
+        </article>
+
+        <article class="expertise-card">
+
+            <div class="expertise-icon">
+                <i class="fa-solid fa-industry"></i>
+            </div>
+
+            <div class="expertise-text">
+
+                <h3>Industrie</h3>
+
+                <p>
+                    Gestion de projet,
+                    amélioration continue
+                    et performance industrielle.
+                </p>
+
+            </div>
+
+        </article>
+
+        <article class="expertise-card">
+
+            <div class="expertise-icon">
+                <i class="fa-solid fa-mountain"></i>
+            </div>
+
+            <div class="expertise-text">
+
+                <h3>Montagne</h3>
+
+                <p>
+                    Randonnée, trekking
+                    et alpinisme :
+                    Explorer, gravir, progresser.
+                </p>
+
+            </div>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==========================================================
+     MES PROJETS
+========================================================== -->
+
+<section class="projects-preview">
+
+    <div class="projects-preview-container">
+
+        <!-- Titre -->
+        <div class="projects-preview-header">
+
+            <h2>Mes projets</h2>
+
+            <p>
+                Une sélection de mes réalisations 😇
+            </p>
+
+        </div>
+
+
+        <!-- Projets -->
+        <div class="projects-preview-grid">
+
+            {% for project in featured_projects %}
+
+                <article class="project-card">
+
+                    <!-- Image -->
+                    <div class="project-card-image">
+
+                        {% if project.thumbnail %}
+
+                            <img
+                                src="{{ project.thumbnail.url }}"
+                                alt="{{ project.title }}"
+                            >
+
+                        {% endif %}
+
+                    </div>
+
+
+                    <!-- Contenu -->
+                    <div class="project-card-content">
+
+                        <h3>
+                            {{ project.title }}
+                        </h3>
+
+
+                        {% if project.category %}
+
+                            <span class="project-card-category">
+                                {{ project.category.name }}
+                            </span>
+
+                        {% endif %}
+
+
+                        {% if project.short_description %}
+
+                            <p>
+                                {{ project.short_description }}
+                            </p>
+
+                        {% endif %}
+
+                        <a
+                            href="{% url 'projects:detail' project.slug %}"
+                            class="project-card-button"
+                        >
+                            Voir le projet
+                            <span>→</span>
+                        </a>
+
+                    </div>
+
+                </article>
+
+            {% empty %}
+
+                <p class="projects-empty">
+                    Aucun projet mis en avant pour le moment.
+                </p>
+
+            {% endfor %}
+
+        </div>
+
+
+        <!-- Lien -->
+        <div class="projects-preview-footer">
+
+            <a
+                href="{% url 'projects:list' %}"
+                class="projects-preview-link"
+            >
+                Voir tous les projets
+                <span>→</span>
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+
+
+<section class="about" id="about">
+
+    <div class="about-container">
+
+        <div class="about-left">
+
+            <div class="about-icon">
+                <i class="fa-solid fa-user"></i>
+            </div>
+
+            <div class="about-text">
+
+                <h2>À propos de moi</h2>
+
+                <p>
+                    Ingénieur en génie industriel, j'aime comprendre,
+                    analyser et concevoir des solutions fiables et
+                    durables. Curieux et motivé, je suis constamment
+                    à la recherche de nouveaux défis techniques
+                    et humains.
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="about-card">
+
+            <div class="about-item">
+
+                <i class="fa-solid fa-graduation-cap"></i>
+
+                <div>
+
+                    <h3>Formation</h3>
+
+                    <p>Ingénieur en Génie Industriel</p>
+
+                </div>
+
+            </div>
+
+            <div class="about-item">
+
+                <i class="fa-solid fa-briefcase"></i>
+
+                <div>
+
+                    <h3>Expérience</h3>
+
+                    <p>Projets industriels et techniques</p>
+
+                </div>
+
+            </div>
+
+            <div class="about-item">
+
+                <i class="fa-solid fa-location-dot"></i>
+
+                <div>
+
+                    <h3>Basé à</h3>
+
+                    <p>Saint-Étienne, France</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+
+
+
 <hr>
 
 <section>
@@ -55,54 +342,6 @@ Accueil
     <p>
         Ce site a été entièrement développé avec Django dans le but de présenter mon travail,
         partager mes projets et mettre en avant ma démarche d'apprentissage.
-    </p>
-
-    <p>
-        Vous y retrouverez notamment :
-    </p>
-
-    <ul>
-        <li>Mes projets de développement informatique.</li>
-        <li>Des réalisations en électronique et systèmes embarqués.</li>
-        <li>Mes expériences autour de la randonnée, du trekking et de l'alpinisme.</li>
-    </ul>
-
-</section>
-
-<hr>
-
-<section>
-
-    <h2>Mon approche</h2>
-
-    <p>
-        J'apprécie les projets qui demandent de comprendre un problème dans son ensemble,
-        d'analyser les besoins, puis de concevoir une solution fiable et durable.
-        Cette approche guide aussi bien mes projets professionnels que mes réalisations personnelles.
-    </p>
-
-    <p>
-        Curieux de nature, j'aime apprendre de nouvelles technologies et approfondir
-        continuellement mes connaissances afin de relever des défis toujours plus ambitieux.
-    </p>
-
-</section>
-
-<hr>
-
-<section>
-
-    <h2>Explorer le portfolio</h2>
-
-    <p>
-        Je vous invite à découvrir mes différents projets afin d'en apprendre davantage sur
-        mon parcours, mes compétences et les technologies que j'utilise.
-    </p>
-
-    <p>
-        <a href="{% url 'projects:list' %}">
-            Accéder à la liste des projets
-        </a>
     </p>
 
 </section>
