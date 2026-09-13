@@ -6,4 +6,3 @@ isort
 ipython
 pre-commit
 django-debug-toolbar
-Pillow
