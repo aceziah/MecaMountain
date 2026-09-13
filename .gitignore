@@ -51,3 +51,6 @@ Thumbs.db
 # Variables d'environnement supplémentaires
 .env.*
 !.env.example
+
+# Sauvegardes locales
+backups/
