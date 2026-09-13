@@ -27,8 +27,34 @@ class Project(models.Model):
     blank=True,
     related_name="projects",
 )
+
+
     
-    description = models.TextField()
+    description = models.TextField(
+    verbose_name="À propos du projet"
+    )
+
+    idea = models.TextField(
+        blank=True,
+        verbose_name="01 — L'idée"
+    )
+
+    conception = models.TextField(
+        blank=True,
+        verbose_name="02 — La conception"
+    )
+
+    realisation = models.TextField(
+        blank=True,
+        verbose_name="03 — La réalisation"
+    )
+
+    resultat = models.TextField(
+        blank=True,
+        verbose_name="04 — Le résultat"
+    )
+
+
 
     thumbnail = models.ImageField(
         upload_to="projects/thumbnails/",

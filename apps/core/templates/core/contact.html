@@ -1,0 +1,276 @@
+{% extends "core/base.html" %}
+{% load static %}
+
+{% block extra_css %}
+    <link
+        rel="stylesheet"
+        href="{% static 'css/contact.css' %}"
+    >
+{% endblock %}
+
+{% block title %}
+    Contact — MecaMountain
+{% endblock %}
+
+{% block content %}
+
+<main class="contact-page">
+
+    <div class="contact-page-container">
+
+        <!-- ==================================================
+             EN-TÊTE
+        =================================================== -->
+
+        <header class="contact-page-header">
+
+            <span class="contact-page-label">
+                Contact
+            </span>
+
+            <h1>
+                Me contacter
+            </h1>
+
+            <p>
+                Une question, un projet ou simplement envie d'échanger ?
+                N'hésitez pas à me contacter.
+            </p>
+
+        </header>
+
+
+        <!-- ==================================================
+             SECTION CONTACT
+        =================================================== -->
+
+        <section class="contact-section">
+
+            <div class="contact-grid">
+
+
+                <!-- ==================================================
+                     FORMULAIRE
+                =================================================== -->
+
+                <div class="contact-form-container">
+
+                    <h2>
+                        Envoyer un message
+                    </h2>
+
+                    <p class="contact-form-intro">
+                        Remplissez le formulaire ci-dessous et je vous
+                        répondrai dès que possible.
+                    </p>
+
+
+
+
+                    {% if success %}
+
+                        <div class="contact-success">
+                            Votre message a bien été envoyé. Je vous répondrai dès que possible.
+                        </div>
+
+                    {% endif %}
+
+                    <form
+                        method="post"
+                        class="contact-form"
+                    >
+
+                        {% csrf_token %}
+
+
+                        <!-- NOM + EMAIL -->
+
+                        <div class="contact-form-row">
+
+                            <div class="contact-form-field">
+
+                                <label for="{{ form.name.id_for_label }}">
+                                    Nom
+                                </label>
+
+                                {{ form.name }}
+
+                            </div>
+
+
+                            <div class="contact-form-field">
+
+                                <label for="{{ form.email.id_for_label }}">
+                                    Email
+                                </label>
+
+                                {{ form.email }}
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- SUJET -->
+
+                        <div class="contact-form-field">
+
+                            <label for="{{ form.subject.id_for_label }}">
+                                Sujet
+                            </label>
+
+                            {{ form.subject }}
+
+                        </div>
+
+
+                        <!-- MESSAGE -->
+
+                        <div class="contact-form-field">
+
+                            <label for="{{ form.message.id_for_label }}">
+                                Message
+                            </label>
+
+                            {{ form.message }}
+
+                        </div>
+
+
+                        <!-- BOUTON -->
+                        <button
+                            type="submit"
+                            class="contact-form-button"
+                        >
+                            Envoyer le message
+                            <span>→</span>
+                        </button>
+
+                        <p class="contact-form-privacy">
+                            Les informations envoyées via ce formulaire sont utilisées uniquement
+                            pour traiter votre demande et vous répondre.
+                            Pour en savoir plus sur la gestion de vos données personnelles et vos droits,
+                            consultez notre
+                            <a href="{% url 'core:privacy' %}">
+                            politique de confidentialité
+                            </a>.
+                        </p>
+
+                    </form>
+
+                </div>
+
+
+                <!-- ==================================================
+                     INFORMATIONS
+                =================================================== -->
+
+                <aside class="contact-info">
+
+                    <div class="contact-info-header">
+
+                        <span class="contact-info-label">
+                            Échanger
+                        </span>
+
+                        <h2>
+                            Parlons de votre projet
+                        </h2>
+
+                        <p>
+                            Que ce soit autour de l'électronique,
+                            du développement, de l'industrie ou de la
+                            montagne, je serai ravi d'échanger avec vous.
+                        </p>
+
+                    </div>
+
+
+                    <div class="contact-info-items">
+
+
+                        <!-- PROJETS -->
+
+                        <div class="contact-info-item">
+
+                            <div class="contact-info-icon">
+                                <i class="fa-solid fa-bolt"></i>
+                            </div>
+
+                            <div>
+
+                                <h3>
+                                    Projets techniques
+                                </h3>
+
+                                <p>
+                                    Une idée, une réalisation ou une
+                                    question technique.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- MONTAGNE -->
+
+                        <div class="contact-info-item">
+
+                            <div class="contact-info-icon">
+                                <i class="fa-solid fa-mountain"></i>
+                            </div>
+
+                            <div>
+
+                                <h3>
+                                    Randonnée & montagne
+                                </h3>
+
+                                <p>
+                                    Échanger autour d'une aventure,
+                                    d'un itinéraire ou de matériel.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- TOUS LES SUJETS -->
+
+                        <div class="contact-info-item">
+
+                            <div class="contact-info-icon">
+                                <i class="fa-solid fa-comments"></i>
+                            </div>
+
+                            <div>
+
+                                <h3>
+                                    Tous les sujets
+                                </h3>
+
+                                <p>
+                                    Une simple question ou envie
+                                    d'échanger ? Écrivez-moi.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+                </aside>
+
+            </div>
+
+        </section>
+
+    </div>
+
+</main>
+
+{% endblock %}

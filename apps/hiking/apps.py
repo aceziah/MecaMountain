@@ -2,4 +2,5 @@ from django.apps import AppConfig
 
 
 class HikingConfig(AppConfig):
-    name = 'apps.hiking'
+    default_auto_field = "django.db.models.BigAutoField"
+    name = "apps.hiking"

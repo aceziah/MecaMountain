@@ -1,27 +1,335 @@
 {% extends "core/base.html" %}
 
+{% load static %}
+
 {% block title %}
-{{ project.title }}
+    {{ project.title }} — MecaMountain
 {% endblock %}
 
 {% block content %}
 
-<h1>{{ project.title }}</h1>
+<main class="pd-page">
 
-{% if project.thumbnail %}
+    <div class="pd-container">
 
-    <img
-        src="{{ project.thumbnail.url }}"
-        alt="{{ project.title }}"
-        width="500"
-    >
+        <!-- ==================================================
+             RETOUR AUX PROJETS
+        =================================================== -->
 
-{% endif %}
+        <a
+            href="{% url 'projects:list' %}"
+            class="pd-back"
+        >
+            <span>←</span>
+            Retour aux projets
+        </a>
 
-<p>
 
-    {{ project.description }}
+        <!-- ==================================================
+             EN-TÊTE
+        =================================================== -->
 
-</p>
+        <header class="pd-header">
+
+            {% if project.category %}
+                <span class="pd-category">
+                    {{ project.category.name }}
+                </span>
+            {% endif %}
+
+            <h1 class="pd-title">
+                {{ project.title }}
+            </h1>
+
+            {% if project.short_description %}
+                <p class="pd-intro">
+                    {{ project.short_description }}
+                </p>
+            {% endif %}
+
+            {% if project.technologies.all %}
+                <div class="pd-technologies">
+
+                    {% for technology in project.technologies.all %}
+                        <span class="pd-technology">
+                            {{ technology.name }}
+                        </span>
+                    {% endfor %}
+
+                </div>
+            {% endif %}
+
+            {% if project.github_url or project.demo_url %}
+
+                <div class="pd-links">
+
+                    {% if project.github_url %}
+                        <a
+                            href="{{ project.github_url }}"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="pd-button"
+                        >
+                            GitHub
+                            <span>↗</span>
+                        </a>
+                    {% endif %}
+
+                    {% if project.demo_url %}
+                        <a
+                            href="{{ project.demo_url }}"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="pd-button"
+                        >
+                            Voir la démo
+                            <span>↗</span>
+                        </a>
+                    {% endif %}
+
+                </div>
+
+            {% endif %}
+
+        </header>
+
+
+        <!-- ==================================================
+             IMAGE PRINCIPALE
+        =================================================== -->
+
+        {% if project.thumbnail %}
+
+            <div class="pd-hero-image">
+
+                <img
+                    src="{{ project.thumbnail.url }}"
+                    alt="{{ project.title }}"
+                >
+
+            </div>
+
+        {% endif %}
+
+
+        <!-- ==================================================
+             À PROPOS DU PROJET
+        =================================================== -->
+
+        {% if project.description %}
+
+            <section class="pd-section pd-about">
+
+                <span class="pd-section-label">
+                    Présentation
+                </span>
+
+                <h2>
+                    À propos du projet
+                </h2>
+
+                <div class="pd-content">
+
+                    {{ project.description|linebreaks }}
+
+                </div>
+
+            </section>
+
+        {% endif %}
+
+
+        <!-- ==================================================
+             01 — L'IDÉE
+        =================================================== -->
+
+        {% if project.idea %}
+
+            <section class="pd-section pd-story">
+
+                <div class="pd-section-heading">
+
+                    <span class="pd-section-number">
+                        01
+                    </span>
+
+                    <h2>
+                        L'idée
+                    </h2>
+
+                </div>
+
+                <div class="pd-content">
+
+                    {{ project.idea|linebreaks }}
+
+                </div>
+
+            </section>
+
+        {% endif %}
+
+
+        <!-- ==================================================
+             02 — LA CONCEPTION
+        =================================================== -->
+
+        {% if project.conception %}
+
+            <section class="pd-section pd-story">
+
+                <div class="pd-section-heading">
+
+                    <span class="pd-section-number">
+                        02
+                    </span>
+
+                    <h2>
+                        La conception
+                    </h2>
+
+                </div>
+
+                <div class="pd-content">
+
+                    {{ project.conception|linebreaks }}
+
+                </div>
+
+            </section>
+
+        {% endif %}
+
+
+        <!-- ==================================================
+             03 — LA RÉALISATION
+        =================================================== -->
+
+        {% if project.realisation %}
+
+            <section class="pd-section pd-story">
+
+                <div class="pd-section-heading">
+
+                    <span class="pd-section-number">
+                        03
+                    </span>
+
+                    <h2>
+                        La réalisation
+                    </h2>
+
+                </div>
+
+                <div class="pd-content">
+
+                    {{ project.realisation|linebreaks }}
+
+                </div>
+
+            </section>
+
+        {% endif %}
+
+
+        <!-- ==================================================
+             04 — LE RÉSULTAT
+        =================================================== -->
+
+        {% if project.resultat %}
+
+            <section class="pd-section pd-story">
+
+                <div class="pd-section-heading">
+
+                    <span class="pd-section-number">
+                        04
+                    </span>
+
+                    <h2>
+                        Le résultat
+                    </h2>
+
+                </div>
+
+                <div class="pd-content">
+
+                    {{ project.resultat|linebreaks }}
+
+                </div>
+
+            </section>
+
+        {% endif %}
+
+
+        <!-- ==================================================
+             GALERIE
+        =================================================== -->
+
+        {% if project.images.all %}
+
+            <section class="pd-gallery">
+
+                <div class="pd-gallery-header">
+
+                    <span class="pd-section-label">
+                        Galerie
+                    </span>
+
+                    <h2>
+                        Le projet en images
+                    </h2>
+
+                </div>
+
+                <div class="pd-gallery-grid">
+
+                    {% for image in project.images.all %}
+
+                        <figure class="pd-gallery-item">
+
+                            <img
+                                src="{{ image.image.url }}"
+                                alt="{{ image.title|default:project.title }}"
+                                loading="lazy"
+                            >
+
+                            {% if image.title %}
+                                <figcaption>
+                                    {{ image.title }}
+                                </figcaption>
+                            {% endif %}
+
+                        </figure>
+
+                    {% endfor %}
+
+                </div>
+
+            </section>
+
+        {% endif %}
+
+
+        <!-- ==================================================
+             RETOUR
+        =================================================== -->
+
+        <div class="pd-footer">
+
+            <a
+                href="{% url 'projects:list' %}"
+                class="pd-back"
+            >
+                <span>←</span>
+                Retour aux projets
+            </a>
+
+        </div>
+
+    </div>
+
+</main>
 
 {% endblock %}

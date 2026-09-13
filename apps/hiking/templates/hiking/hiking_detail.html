@@ -1,0 +1,386 @@
+{% extends "core/base.html" %}
+
+{% block title %}
+    {{ hiking.title }} — MecaMountain
+{% endblock %}
+
+{% block content %}
+
+<main class="hiking-detail">
+
+    <div class="hiking-detail-container">
+
+        <!-- ==================================================
+             RETOUR
+        =================================================== -->
+
+        <a
+            href="{% url 'hiking:list' %}"
+            class="hiking-detail-back"
+        >
+            <span>←</span>
+            Retour aux randonnées
+        </a>
+
+
+        <!-- ==================================================
+             EN-TÊTE
+        =================================================== -->
+
+        <header class="hiking-detail-header">
+
+            {% if hiking.massif %}
+
+                <span class="hiking-detail-massif">
+                    {{ hiking.massif }}
+                </span>
+
+            {% endif %}
+
+
+            <h1>
+                {{ hiking.title }}
+            </h1>
+
+
+            {% if hiking.short_description %}
+
+                <p class="hiking-detail-intro">
+                    {{ hiking.short_description }}
+                </p>
+
+            {% endif %}
+
+        </header>
+
+
+        <!-- ==================================================
+             IMAGE PRINCIPALE
+        =================================================== -->
+
+        {% if hiking.thumbnail %}
+
+            <div class="hiking-detail-hero-image">
+
+                <img
+                    src="{{ hiking.thumbnail.url }}"
+                    alt="{{ hiking.title }}"
+                >
+
+            </div>
+
+        {% endif %}
+
+
+        <!-- ==================================================
+             INFORMATIONS
+        =================================================== -->
+
+        <section class="hiking-detail-stats">
+
+            {% if hiking.location %}
+
+                <div class="hiking-detail-stat">
+
+                    <span class="hiking-detail-stat-label">
+                        Lieu
+                    </span>
+
+                    <strong>
+                        {{ hiking.location }}
+                    </strong>
+
+                </div>
+
+            {% endif %}
+
+
+            {% if hiking.date %}
+
+                <div class="hiking-detail-stat">
+
+                    <span class="hiking-detail-stat-label">
+                        Date
+                    </span>
+
+                    <strong>
+                        {{ hiking.date|date:"d/m/Y" }}
+                    </strong>
+
+                </div>
+
+            {% endif %}
+
+
+            {% if hiking.distance %}
+
+                <div class="hiking-detail-stat">
+
+                    <span class="hiking-detail-stat-label">
+                        Distance
+                    </span>
+
+                    <strong>
+                        {{ hiking.distance }} km
+                    </strong>
+
+                </div>
+
+            {% endif %}
+
+
+            {% if hiking.elevation_gain %}
+
+                <div class="hiking-detail-stat">
+
+                    <span class="hiking-detail-stat-label">
+                        Dénivelé
+                    </span>
+
+                    <strong>
+                        +{{ hiking.elevation_gain }} m
+                    </strong>
+
+                </div>
+
+            {% endif %}
+
+
+            {% if hiking.max_altitude %}
+
+                <div class="hiking-detail-stat">
+
+                    <span class="hiking-detail-stat-label">
+                        Altitude max.
+                    </span>
+
+                    <strong>
+                        {{ hiking.max_altitude }} m
+                    </strong>
+
+                </div>
+
+            {% endif %}
+
+
+            {% if hiking.duration %}
+
+                <div class="hiking-detail-stat">
+
+                    <span class="hiking-detail-stat-label">
+                        Durée
+                    </span>
+
+                    <strong>
+                        {{ hiking.duration }}
+                    </strong>
+
+                </div>
+
+            {% endif %}
+
+
+            {% if hiking.difficulty %}
+
+                <div class="hiking-detail-stat">
+
+                    <span class="hiking-detail-stat-label">
+                        Difficulté
+                    </span>
+
+                    <strong>
+                        {{ hiking.get_difficulty_display }}
+                    </strong>
+
+                </div>
+
+            {% endif %}
+
+        </section>
+
+
+        <!-- ==================================================
+             DESCRIPTION
+        =================================================== -->
+
+        {% if hiking.description %}
+
+            <section class="hiking-detail-section">
+
+                <span class="hiking-detail-section-label">
+                    Présentation
+                </span>
+
+                <h2>
+                    À propos de cette randonnée
+                </h2>
+
+                <div class="hiking-detail-content">
+
+                    {{ hiking.description|linebreaks }}
+
+                </div>
+
+            </section>
+
+        {% endif %}
+
+<!-- ==================================================
+     ÉQUIPEMENTS
+================================================== -->
+
+{% if hiking.equipment.all %}
+
+    <section class="hiking-detail-section hiking-detail-equipment">
+
+        <span class="hiking-detail-section-label">
+            Équipement
+        </span>
+
+        <h2>
+            Équipements
+        </h2>
+
+        <div class="hiking-detail-equipment-grid">
+
+            {% for equipment in hiking.equipment.all %}
+
+                <article class="hiking-detail-equipment-card">
+
+                    {% if equipment.image %}
+
+                        <div class="hiking-detail-equipment-image">
+
+                            <img
+                                src="{{ equipment.image.url }}"
+                                alt="{{ equipment.name }}"
+                                loading="lazy"
+                            >
+
+                        </div>
+
+                    {% endif %}
+
+
+                    <div class="hiking-detail-equipment-content">
+
+                        <h3>
+                            {{ equipment.name }}
+                        </h3>
+
+                        {% if equipment.description %}
+
+                            <p>
+                                {{ equipment.description }}
+                            </p>
+
+                        {% endif %}
+
+                    </div>
+
+                </article>
+
+            {% endfor %}
+
+        </div>
+
+    </section>
+
+{% endif %}
+
+
+        <!-- ==================================================
+             GALERIE
+        =================================================== -->
+
+        {% if hiking.images.all %}
+
+            <section class="hiking-detail-gallery">
+
+                <div class="hiking-detail-gallery-header">
+
+                    <span class="hiking-detail-section-label">
+                        Galerie
+                    </span>
+
+                    <h2>
+                        La randonnée en images
+                    </h2>
+
+                </div>
+
+
+                <div class="hiking-detail-gallery-grid">
+
+                    {% for image in hiking.images.all %}
+
+                        <figure class="hiking-detail-gallery-item">
+
+                            <img
+                                src="{{ image.image.url }}"
+                                alt="{{ image.title|default:hiking.title }}"
+                                loading="lazy"
+                            >
+
+                            {% if image.title %}
+
+                                <figcaption>
+                                    {{ image.title }}
+                                </figcaption>
+
+                            {% endif %}
+
+                        </figure>
+
+                    {% endfor %}
+
+                </div>
+
+            </section>
+
+        {% endif %}
+
+
+        <!-- ==================================================
+             GPX
+        =================================================== -->
+
+        {% if hiking.gpx_url %}
+
+            <div class="hiking-detail-gpx">
+
+                <a
+                    href="{{ hiking.gpx_url }}"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Voir / télécharger la trace GPS
+                    <span>↗</span>
+                </a>
+
+            </div>
+
+        {% endif %}
+
+
+        <!-- ==================================================
+             RETOUR
+        =================================================== -->
+
+        <div class="hiking-detail-footer">
+
+            <a
+                href="{% url 'hiking:list' %}"
+                class="hiking-detail-back"
+            >
+                <span>←</span>
+                Retour aux randonnées
+            </a>
+
+        </div>
+
+    </div>
+
+</main>
+
+{% endblock %}

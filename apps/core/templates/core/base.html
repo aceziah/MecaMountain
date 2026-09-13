@@ -4,15 +4,23 @@
 
 <head>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-<link rel="stylesheet" href="{% static 'css/styles.css' %}">
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <link
+        rel="stylesheet"
+        href="{% static 'css/fontawesome.min.css' %}"
+    >
+
+
+    <link
+        rel="stylesheet"
+        href="{% static 'css/styles.css' %}"
+    >
+
+    {% block extra_css %}
+    {% endblock %}
 
     <title>
         {% block title %}
@@ -20,9 +28,8 @@
         {% endblock %}
     </title>
 
-    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
-
 </head>
+
 
 <body>
 
@@ -57,15 +64,15 @@
                 Projets
             </a>
 
-            <a href="#">
+            <a href="{% url 'hiking:list' %}">
                 Randonnées
             </a>
 
-            <a href="#">
+            <a href="{% url 'content:newsletter' %}">
                 Newsletter
             </a>
 
-            <a href="#">
+            <a href="{% url 'core:contact' %}">
                 Contact
             </a>
 
@@ -129,6 +136,58 @@
     <p>© 2026 Axel Dupuy</p>
 
 </footer>
+
+
+<!-- ==========================================================
+     BANDEAU COOKIES
+========================================================== -->
+
+<div id="cookie-banner" class="cookie-banner">
+
+    <div class="cookie-banner-content">
+
+        <div class="cookie-banner-text">
+
+            <h2>Votre confidentialité</h2>
+
+            <p>
+                MecaMountain utilise les cookies nécessaires au fonctionnement
+                du site et, avec votre accord, Google Analytics pour mesurer
+                l'audience du site.
+            </p>
+
+            <a href="{% url 'core:privacy' %}">
+                En savoir plus
+            </a>
+
+        </div>
+
+        <div class="cookie-banner-actions">
+
+            <button
+                type="button"
+                id="cookie-refuse"
+                class="cookie-button cookie-button-secondary"
+            >
+                Refuser
+            </button>
+
+            <button
+                type="button"
+                id="cookie-accept"
+                class="cookie-button cookie-button-primary"
+            >
+                Accepter
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<script src="{% static 'js/cookies.js' %}"></script>
 
 </body>
 

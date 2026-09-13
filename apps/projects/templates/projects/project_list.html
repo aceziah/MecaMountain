@@ -6,16 +6,39 @@ Mes projets
 
 {% block content %}
 
-<h1>Mes projets</h1>
+<section class="projects-page">
 
-{% for project in projects %}
+    <div class="projects-page-container">
 
-    {% include "core/components/project_card.html" %}
+        <header class="projects-page-header">
 
-{% empty %}
+            <h1>Mes projets</h1>
 
-    <p>Aucun projet disponible.</p>
+            <p>
+                Des réalisations et expérimentations en électronique, mécanique et autres domaines techniques, de la conception à la réalisation.
+            </p>
 
-{% endfor %}
+        </header>
+
+
+        <div class="projects-list">
+
+            {% for project in projects %}
+
+                {% include "core/components/project_card.html" %}
+
+            {% empty %}
+
+                <p class="projects-empty">
+                    Aucun projet disponible.
+                </p>
+
+            {% endfor %}
+
+        </div>
+
+    </div>
+
+</section>
 
 {% endblock %}

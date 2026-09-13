@@ -24,6 +24,8 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("", include("apps.core.urls")),
     path("projects/", include("apps.projects.urls")),
+    path("randonnees/", include("apps.hiking.urls")),
+    path("newsletter/", include("apps.content.urls")),
 ]
 
 if settings.DEBUG:

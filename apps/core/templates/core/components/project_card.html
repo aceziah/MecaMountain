@@ -1,73 +1,83 @@
-<article>
+<article class="project-list-card">
 
-{% if project.thumbnail %}
+    <!-- ======================================================
+         IMAGE
+    ======================================================= -->
 
-    <img
-        src="{{ project.thumbnail.url }}"
-        alt="{{ project.title }}"
-        width="300"
-    >
+    <div class="project-list-card-image">
 
-{% endif %}
-    <!-- 
-    On affiche uniquement le titre 
-    <h3>{{ project.title }}</h3>
-    -->
+        {% if project.thumbnail %}
 
-    <h3>
-    <!-- On rend le titre cliquable pour le rediriger vers le projet -->
-    <a href="{% url 'projects:detail' project.slug %}">
-        {{ project.title }}
-    </a>
-    </h3>
+            <img
+                src="{{ project.thumbnail.url }}"
+                alt="{{ project.title }}"
+            >
+
+        {% endif %}
+
+    </div>
 
 
-    <p>
+    <!-- ======================================================
+         CONTENU
+    ======================================================= -->
 
-        {{ project.short_description }}
+    <div class="project-list-card-content">
 
-    </p>
+        {% if project.category %}
 
-    
-<!-- 
-<p>
-    <a href="{% url 'projects:detail' project.slug %}">
-        Aller au détail du projet →
-    </a>
-</p>
--->
+            <span class="project-list-card-category">
+                {{ project.category }}
+            </span>
 
+        {% endif %}
 
 
+        <h2>
+            {{ project.title }}
+        </h2>
 
 
-    {% if project.category %}
+        {% if project.short_description %}
 
-        <strong>
+            <p class="project-list-card-description">
+                {{ project.short_description }}
+            </p>
 
-            {{ project.category }}
-
-        </strong>
-
-    {% endif %}
+        {% endif %}
 
 
-    <h4>Technologies</h4>
+        <!-- Technologies -->
 
-<ul>
+        {% if project.technologies.all %}
 
-    {% for technology in project.technologies.all %}
+            <div class="project-list-card-technologies">
 
-        <li>{{ technology.name }}</li>
+                {% for technology in project.technologies.all %}
 
-    {% empty %}
+                    <span class="project-technology">
+                        {{ technology.name }}
+                    </span>
 
-        <li>Aucune technologie.</li>
+                {% empty %}
 
-    {% endfor %}
+                {% endfor %}
 
-</ul>
+            </div>
+
+        {% endif %}
+
+
+        <!-- Bouton -->
+
+        <a
+            href="{% url 'projects:detail' project.slug %}"
+            class="project-list-card-button"
+        >
+            Voir le projet
+            <span>→</span>
+        </a>
+
+    </div>
 
 </article>
-
-<hr>

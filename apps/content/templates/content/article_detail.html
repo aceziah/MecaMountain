@@ -1,0 +1,122 @@
+{% extends "core/base.html" %}
+
+{% block title %}
+    {{ article.title }} — MecaMountain
+{% endblock %}
+
+{% block content %}
+
+<main class="article-detail">
+
+    <div class="article-detail-container">
+
+        <!-- ==================================================
+             RETOUR
+        =================================================== -->
+
+        <a
+            href="{% url 'content:newsletter' %}"
+            class="article-detail-back"
+        >
+            <span>←</span>
+            Retour à la newsletter
+        </a>
+
+
+        <!-- ==================================================
+             EN-TÊTE
+        =================================================== -->
+
+        <header class="article-detail-header">
+
+            {% if article.category %}
+
+                <span class="article-detail-category">
+                    {{ article.category.name }}
+                </span>
+
+            {% endif %}
+
+
+            <h1 class="article-detail-title">
+                {{ article.title }}
+            </h1>
+
+
+            {% if article.short_description %}
+
+                <p class="article-detail-intro">
+                    {{ article.short_description }}
+                </p>
+
+            {% endif %}
+
+
+            {% if article.published_at %}
+
+                <div class="article-detail-date">
+
+                    Publié le
+                    {{ article.published_at|date:"d/m/Y" }}
+
+                </div>
+
+            {% endif %}
+
+        </header>
+
+
+        <!-- ==================================================
+             IMAGE PRINCIPALE
+        =================================================== -->
+
+        {% if article.thumbnail %}
+
+            <div class="article-detail-hero-image">
+
+                <img
+                    src="{{ article.thumbnail.url }}"
+                    alt="{{ article.title }}"
+                >
+
+            </div>
+
+        {% endif %}
+
+
+        <!-- ==================================================
+             CONTENU
+        =================================================== -->
+
+        <section class="article-detail-section">
+
+            <div class="article-detail-content">
+
+                {{ article.content|linebreaks }}
+
+            </div>
+
+        </section>
+
+
+        <!-- ==================================================
+             RETOUR
+        =================================================== -->
+
+        <div class="article-detail-footer">
+
+            <a
+                href="{% url 'content:newsletter' %}"
+                class="article-detail-back"
+            >
+                <span>←</span>
+                Retour à la newsletter
+            </a>
+
+        </div>
+
+    </div>
+
+</main>
+
+{% endblock %}

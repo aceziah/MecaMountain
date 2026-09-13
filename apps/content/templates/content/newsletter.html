@@ -1,0 +1,268 @@
+{% extends "core/base.html" %}
+
+{% block title %}
+    Newsletter — MecaMountain
+{% endblock %}
+
+{% block content %}
+
+<main class="newsletter-page">
+
+    <div class="newsletter-page-container">
+
+        <!-- ==================================================
+             EN-TÊTE
+        =================================================== -->
+
+        <header class="newsletter-page-header">
+
+            <span class="newsletter-page-label">
+                Actualités
+            </span>
+
+            <h1>
+                Newsletter
+            </h1>
+
+            <p>
+                Retrouvez les dernières nouvelles, découvertes
+                et actualités autour de l'électronique et de la randonnée.
+            </p>
+
+        </header>
+
+
+        <!-- ==================================================
+             ACTUALITÉS ÉLECTRONIQUES
+        =================================================== -->
+
+        <section class="newsletter-section">
+
+            <div class="newsletter-section-header">
+
+                <div>
+
+                    <span class="newsletter-section-label">
+                        Électronique
+                    </span>
+
+                    <h2>
+                        Les dernières nouveautés
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            {% if electronic_articles %}
+
+                <div class="newsletter-articles-grid">
+
+                    {% for article in electronic_articles %}
+
+                        <article class="newsletter-article-card">
+
+                            {% if article.thumbnail %}
+
+                                <a
+                                    href="{{ article.get_absolute_url }}"
+                                    class="newsletter-article-card-image"
+                                >
+
+                                    <img
+                                        src="{{ article.thumbnail.url }}"
+                                        alt="{{ article.title }}"
+                                        loading="lazy"
+                                    >
+
+                                </a>
+
+                            {% endif %}
+
+
+                            <div class="newsletter-article-card-content">
+
+                                <div class="newsletter-article-card-meta">
+
+                                    <span class="newsletter-article-card-category">
+                                        Électronique
+                                    </span>
+
+                                    {% if article.published_at %}
+
+                                        <span class="newsletter-article-card-date">
+                                            {{ article.published_at|date:"d/m/Y" }}
+                                        </span>
+
+                                    {% endif %}
+
+                                </div>
+
+
+                                <h3>
+
+                                    <a
+                                        href="{{ article.get_absolute_url }}"
+                                    >
+                                        {{ article.title }}
+                                    </a>
+
+                                </h3>
+
+
+                                {% if article.short_description %}
+
+                                    <p>
+                                        {{ article.short_description }}
+                                    </p>
+
+                                {% endif %}
+
+
+                                <a
+                                    href="{{ article.get_absolute_url }}"
+                                    class="newsletter-article-card-link"
+                                >
+                                    Lire l'article
+                                    <span>→</span>
+                                </a>
+
+                            </div>
+
+                        </article>
+
+                    {% endfor %}
+
+                </div>
+
+            {% else %}
+
+                <p class="newsletter-empty">
+                    Aucun article électronique publié pour le moment.
+                </p>
+
+            {% endif %}
+
+        </section>
+
+
+        <!-- ==================================================
+             ACTUALITÉS RANDONNÉE
+        =================================================== -->
+
+        <section class="newsletter-section newsletter-section-hiking">
+
+            <div class="newsletter-section-header">
+
+                <div>
+
+                    <span class="newsletter-section-label">
+                        Randonnée
+                    </span>
+
+                    <h2>
+                        Les dernières aventures
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            {% if hiking_articles %}
+
+                <div class="newsletter-articles-grid">
+
+                    {% for article in hiking_articles %}
+
+                        <article class="newsletter-article-card">
+
+                            {% if article.thumbnail %}
+
+                                <a
+                                    href="{{ article.get_absolute_url }}"
+                                    class="newsletter-article-card-image"
+                                >
+
+                                    <img
+                                        src="{{ article.thumbnail.url }}"
+                                        alt="{{ article.title }}"
+                                        loading="lazy"
+                                    >
+
+                                </a>
+
+                            {% endif %}
+
+
+                            <div class="newsletter-article-card-content">
+
+                                <div class="newsletter-article-card-meta">
+
+                                    <span class="newsletter-article-card-category">
+                                        Randonnée
+                                    </span>
+
+                                    {% if article.published_at %}
+
+                                        <span class="newsletter-article-card-date">
+                                            {{ article.published_at|date:"d/m/Y" }}
+                                        </span>
+
+                                    {% endif %}
+
+                                </div>
+
+
+                                <h3>
+
+                                    <a
+                                        href="{{ article.get_absolute_url }}"
+                                    >
+                                        {{ article.title }}
+                                    </a>
+
+                                </h3>
+
+
+                                {% if article.short_description %}
+
+                                    <p>
+                                        {{ article.short_description }}
+                                    </p>
+
+                                {% endif %}
+
+
+                                <a
+                                    href="{{ article.get_absolute_url }}"
+                                    class="newsletter-article-card-link"
+                                >
+                                    Lire l'article
+                                    <span>→</span>
+                                </a>
+
+                            </div>
+
+                        </article>
+
+                    {% endfor %}
+
+                </div>
+
+            {% else %}
+
+                <p class="newsletter-empty">
+                    Aucun article randonnée publié pour le moment.
+                </p>
+
+            {% endif %}
+
+        </section>
+
+    </div>
+
+</main>
+
+{% endblock %}

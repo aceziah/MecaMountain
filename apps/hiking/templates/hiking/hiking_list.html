@@ -1,0 +1,142 @@
+{% extends "core/base.html" %}
+
+{% block title %}
+Randonnées
+{% endblock %}
+
+{% block content %}
+
+<section class="hiking-page">
+
+    <div class="hiking-page-container">
+
+        <!-- ==================================================
+             EN-TÊTE
+        =================================================== -->
+
+        <header class="hiking-page-header">
+
+            <h1>
+                Mes randonnées
+            </h1>
+
+            <p>
+                Des randonnées, ascensions, et itinéraires parcourus au fil de mes aventures en montagne.
+            </p>
+
+        </header>
+
+
+        <!-- ==================================================
+             LISTE
+        =================================================== -->
+
+        <div class="hiking-list">
+
+            {% for hiking in hikings %}
+
+                <article class="hiking-card">
+
+                    <!-- IMAGE -->
+
+                    <div class="hiking-card-image">
+
+                        {% if hiking.thumbnail %}
+
+                            <img
+                                src="{{ hiking.thumbnail.url }}"
+                                alt="{{ hiking.title }}"
+                            >
+
+                        {% endif %}
+
+                    </div>
+
+
+                    <!-- CONTENU -->
+
+                    <div class="hiking-card-content">
+
+                        {% if hiking.massif %}
+
+                            <span class="hiking-card-massif">
+                                {{ hiking.massif }}
+                            </span>
+
+                        {% endif %}
+
+
+                        <h2>
+                            {{ hiking.title }}
+                        </h2>
+
+
+                        {% if hiking.short_description %}
+
+                            <p class="hiking-card-description">
+                                {{ hiking.short_description }}
+                            </p>
+
+                        {% endif %}
+
+
+                        <!-- CARACTÉRISTIQUES -->
+
+                        <div class="hiking-card-stats">
+
+                            {% if hiking.distance %}
+                                <span>
+                                    {{ hiking.distance }} km
+                                </span>
+                            {% endif %}
+
+                            {% if hiking.elevation_gain %}
+                                <span>
+                                    +{{ hiking.elevation_gain }} m
+                                </span>
+                            {% endif %}
+
+                            {% if hiking.max_altitude %}
+                                <span>
+                                    {{ hiking.max_altitude }} m
+                                </span>
+                            {% endif %}
+
+                            {% if hiking.difficulty %}
+                                <span>
+                                    {{ hiking.get_difficulty_display }}
+                                </span>
+                            {% endif %}
+
+                        </div>
+
+
+                        <!-- BOUTON -->
+
+                        <a
+                            href="{% url 'hiking:detail' hiking.slug %}"
+                            class="hiking-card-button"
+                        >
+                            Voir la randonnée
+                            <span>→</span>
+                        </a>
+
+                    </div>
+
+                </article>
+
+            {% empty %}
+
+                <p class="hiking-empty">
+                    Aucune randonnée disponible pour le moment.
+                </p>
+
+            {% endfor %}
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}
