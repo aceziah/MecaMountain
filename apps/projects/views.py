@@ -4,19 +4,16 @@ from .models import Project
 
 
 def project_list(request):
-
     projects = Project.objects.filter(
-        is_featured=True
-    )
-
-    context = {
-        "projects": projects,
-    }
+        is_featured=True,
+    ).order_by("project_order")
 
     return render(
         request,
         "projects/project_list.html",
-        context,
+        {
+            "projects": projects,
+        },
     )
 
 

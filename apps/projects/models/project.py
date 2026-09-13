@@ -75,6 +75,16 @@ class Project(models.Model):
         verbose_name="Projet visible sur la page d'accueil"
     )
 
+    homepage_order = models.PositiveIntegerField(
+        default=0,
+        verbose_name="Ordre sur la page d'accueil",
+    )
+
+    project_order = models.PositiveIntegerField(
+        default=0,
+        verbose_name="Ordre dans les projets",
+    )
+
     # Un projet doit être visible sur le site pour pouvoir
     # être affiché sur la page d'accueil.
     # Maximum 4 projets peuvent être affichés sur la page d'accueil.
@@ -108,3 +118,20 @@ class Project(models.Model):
 
     def __str__(self):
         return self.title
+
+# ==========================================================
+# MODÈLES PROXY POUR L'ADMINISTRATION
+# ==========================================================
+
+class HomepageProjectOrder(Project):
+    class Meta:
+        proxy = True
+        verbose_name = "Ordre d'affichage Accueil"
+        verbose_name_plural = "Ordre d'affichage Accueil"
+
+
+class ProjectPageOrder(Project):
+    class Meta:
+        proxy = True
+        verbose_name = "Ordre d'affichage Projet"
+        verbose_name_plural = "Ordre d'affichage Projet"

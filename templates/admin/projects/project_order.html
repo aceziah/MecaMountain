@@ -1,0 +1,191 @@
+{% extends "admin/base_site.html" %}
+
+
+{% block extrahead %}
+
+{{ block.super }}
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const list = document.getElementById("project-order-list");
+
+    if (!list) {
+        return;
+    }
+
+    let draggedItem = null;
+
+    list.querySelectorAll(".project-order-item").forEach(function (item) {
+
+        item.setAttribute("draggable", "true");
+
+        item.addEventListener("dragstart", function () {
+            draggedItem = item;
+            item.classList.add("dragging");
+        });
+
+        item.addEventListener("dragend", function () {
+            item.classList.remove("dragging");
+            draggedItem = null;
+            updateOrderNumbers();
+        });
+
+        item.addEventListener("dragover", function (event) {
+
+            event.preventDefault();
+
+            if (!draggedItem || draggedItem === item) {
+                return;
+            }
+
+            const rect = item.getBoundingClientRect();
+            const middle = rect.top + rect.height / 2;
+
+            if (event.clientY < middle) {
+                list.insertBefore(draggedItem, item);
+            } else {
+                list.insertBefore(draggedItem, item.nextSibling);
+            }
+        });
+    });
+
+
+    function updateOrderNumbers() {
+
+        list.querySelectorAll(".project-order-number")
+            .forEach(function (number, index) {
+
+                number.textContent = index + 1;
+
+            });
+    }
+
+});
+</script>
+
+{% endblock %}
+
+
+{% block content %}
+
+<div id="content-main">
+
+    <h1>Ordre d'affichage Projet</h1>
+
+    <p>
+        Faites glisser les projets pour définir leur ordre d'affichage
+        dans la page « Projets ».
+    </p>
+
+
+    <form method="post">
+
+        {% csrf_token %}
+
+        <div id="project-order-list">
+
+            {% for project in projects %}
+
+                <div
+                    class="project-order-item"
+                    data-project-id="{{ project.pk }}"
+                >
+
+                    <input
+                        type="hidden"
+                        name="project_ids"
+                        value="{{ project.pk }}"
+                    >
+
+                    <span class="drag-handle">☰</span>
+
+                    <span class="project-order-number">
+                        {{ forloop.counter }}
+                    </span>
+
+                    <strong>
+                        {{ project.title }}
+                    </strong>
+
+                </div>
+
+            {% empty %}
+
+                <p>
+                    Aucun projet n'est actuellement visible
+                    dans la page « Projets ».
+                </p>
+
+            {% endfor %}
+
+        </div>
+
+
+        {% if projects %}
+
+            <div class="submit-row">
+
+                <input
+                    type="submit"
+                    value="💾 Enregistrer l'ordre"
+                    class="default"
+                >
+
+            </div>
+
+        {% endif %}
+
+    </form>
+
+</div>
+
+
+<style>
+
+    #project-order-list {
+        max-width: 800px;
+        margin-top: 20px;
+    }
+
+
+    .project-order-item {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+
+        padding: 15px 20px;
+        margin-bottom: 8px;
+
+        background: #ffffff;
+        border: 1px solid #dddddd;
+        border-radius: 4px;
+
+        cursor: grab;
+    }
+
+
+    .project-order-item:active {
+        cursor: grabbing;
+    }
+
+
+    .drag-handle {
+        font-size: 20px;
+        color: #666666;
+    }
+
+
+    .project-order-number {
+        min-width: 25px;
+        font-weight: bold;
+    }
+
+
+    .project-order-item.dragging {
+        opacity: 0.5;
+    }
+
+</style>
+
+{% endblock %}
