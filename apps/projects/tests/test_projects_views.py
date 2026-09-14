@@ -98,3 +98,40 @@ class ProjectViewsTests(TestCase):
             projects,
             [project_2, project_3, project_1],
         )
+
+    def test_project_list_follows_manual_order(self):
+        project_1 = Project.objects.create(
+            title="Projet 1",
+            slug="projet-1",
+            short_description="Projet 1",
+            description="Description du projet 1",
+            is_featured=True,
+            project_order=3,
+        )
+
+        project_2 = Project.objects.create(
+            title="Projet 2",
+            slug="projet-2",
+            short_description="Projet 2",
+            description="Description du projet 2",
+            is_featured=True,
+            project_order=1,
+        )
+
+        project_3 = Project.objects.create(
+            title="Projet 3",
+            slug="projet-3",
+            short_description="Projet 3",
+            description="Description du projet 3",
+            is_featured=True,
+            project_order=2,
+        )
+
+        response = self.client.get(reverse("projects:list"))
+
+        projects = list(response.context["projects"])
+
+        self.assertEqual(
+            projects,
+            [project_2, project_3, project_1],
+        )
