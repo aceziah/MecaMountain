@@ -13,10 +13,59 @@
         href="{% static 'css/fontawesome.min.css' %}"
     >
 
+    <link
+        rel="stylesheet"
+        href="{% static 'css/theme.css' %}"
+    >
 
     <link
         rel="stylesheet"
-        href="{% static 'css/styles.css' %}"
+        href="{% static 'css/base.css' %}"
+    >
+
+    <link
+        rel="stylesheet"
+        href="{% static 'css/navbar.css' %}"
+    >
+
+    <link
+        rel="stylesheet"
+        href="{% static 'css/home.css' %}"
+    >
+
+    <link
+        rel="stylesheet"
+        href="{% static 'css/projects.css' %}"
+    >
+
+    <link
+        rel="stylesheet"
+        href="{% static 'css/hiking.css' %}"
+    >
+
+    <link
+        rel="stylesheet"
+        href="{% static 'css/hiking-detail.css' %}"
+    >
+
+    <link
+        rel="stylesheet"
+        href="{% static 'css/project-detail.css' %}"
+    >
+
+    <link
+        rel="stylesheet"
+        href="{% static 'css/article-detail.css' %}"
+    >
+
+    <link
+        rel="stylesheet"
+        href="{% static 'css/newsletter.css' %}"
+    >
+
+    <link
+        rel="stylesheet"
+        href="{% static 'css/cookies.css' %}"
     >
 
     {% block extra_css %}
@@ -24,7 +73,7 @@
 
     <title>
         {% block title %}
-            Portfolio
+            MecaMountain — Axel Dupuy
         {% endblock %}
     </title>
 
@@ -78,9 +127,14 @@
 
         </nav>
 
-<button class="theme-toggle">
+<button
+    type="button"
+    class="theme-toggle"
+    aria-label="Changer de thème"
+>
 
 <svg
+    aria-hidden="true"
     xmlns="http://www.w3.org/2000/svg"
     width="22"
     height="22"
@@ -103,7 +157,6 @@
 
     <path d="m19.1 4.9-1.4 1.4"/>
     <path d="m6.3 17.7-1.4 1.4"/>
-
 </svg>
 
 </button>
@@ -151,9 +204,9 @@
             <h2>Votre confidentialité</h2>
 
             <p>
-                MecaMountain utilise les cookies nécessaires au fonctionnement
-                du site et, avec votre accord, Google Analytics pour mesurer
-                l'audience du site.
+                MecaMountain utilise des cookies nécessaires au fonctionnement
+                du site. Aucun outil de mesure d'audience n'est activé sans votre
+                consentement.
             </p>
 
             <a href="{% url 'core:privacy' %}">
@@ -188,6 +241,7 @@
 
 
 <script src="{% static 'js/cookies.js' %}"></script>
+<script src="{% static 'js/theme.js' %}"></script>
 
 </body>
 

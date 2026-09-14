@@ -1,0 +1,603 @@
+/* ==========================================================
+   RANDONNÉE — PAGE DÉTAIL
+========================================================== */
+
+.hiking-detail {
+    padding: 70px 0 100px;
+}
+
+.hiking-detail-container {
+    width: min(1180px, 92%);
+    margin: 0 auto;
+}
+
+
+/* ==========================================================
+   RETOUR
+========================================================== */
+
+.hiking-detail-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+
+    margin-bottom: 45px;
+
+    color: #64748b;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    text-decoration: none;
+
+    transition:
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.hiking-detail-back span {
+    font-size: 18px;
+}
+
+.hiking-detail-back:hover {
+    color: #111827;
+    transform: translateX(-3px);
+}
+
+
+/* ==========================================================
+   EN-TÊTE
+========================================================== */
+
+.hiking-detail-header {
+    margin-bottom: 45px;
+}
+
+.hiking-detail-massif {
+    display: inline-block;
+
+    margin-bottom: 16px;
+    padding: 7px 13px;
+
+    border-radius: 999px;
+
+    background: #eef4ff;
+
+    color: #2563eb;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    text-transform: uppercase;
+    letter-spacing: 0.7px;
+}
+
+.hiking-detail-header h1 {
+    margin: 0 0 18px;
+
+    font-size: clamp(42px, 5vw, 68px);
+    line-height: 1.05;
+
+    font-weight: 750;
+
+    letter-spacing: -1.5px;
+
+    color: #111827;
+}
+
+.hiking-detail-intro {
+    max-width: 760px;
+
+    margin: 0;
+
+    font-size: 19px;
+    line-height: 1.6;
+
+    color: #64748b;
+}
+
+
+/* ==========================================================
+   IMAGE PRINCIPALE
+========================================================== */
+
+.hiking-detail-hero-image {
+    width: 100%;
+
+    margin-bottom: 45px;
+
+    overflow: hidden;
+
+    border-radius: 18px;
+
+    background: #e5e7eb;
+}
+
+.hiking-detail-hero-image img {
+    display: block;
+
+    width: 100%;
+
+    max-height: 560px;
+
+    object-fit: cover;
+
+    transition: transform 0.45s ease;
+}
+
+.hiking-detail-hero-image:hover img {
+    transform: scale(1.015);
+}
+
+
+/* ==========================================================
+   STATISTIQUES
+========================================================== */
+
+.hiking-detail-stats {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    margin-bottom: 75px;
+
+    overflow: hidden;
+
+    border: 1px solid #e5e7eb;
+    border-radius: 16px;
+
+    background: #ffffff;
+}
+
+.hiking-detail-stat {
+    min-height: 105px;
+
+    padding: 22px 24px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    border-right: 1px solid #e5e7eb;
+}
+
+.hiking-detail-stat:nth-child(4n) {
+    border-right: none;
+}
+
+.hiking-detail-stat-label {
+    margin-bottom: 7px;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    color: #94a3b8;
+
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+}
+
+.hiking-detail-stat strong {
+    font-size: 17px;
+
+    color: #111827;
+}
+
+
+/* ==========================================================
+   SECTIONS
+========================================================== */
+
+.hiking-detail-section {
+    max-width: 850px;
+
+    margin: 0 auto 75px;
+}
+
+.hiking-detail-section-label {
+    display: block;
+
+    margin-bottom: 10px;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    color: #2563eb;
+
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.hiking-detail-section h2,
+.hiking-detail-gallery-header h2 {
+    margin: 0 0 25px;
+
+    font-size: 32px;
+    line-height: 1.2;
+
+    font-weight: 700;
+
+    color: #111827;
+
+    letter-spacing: -0.5px;
+}
+
+
+/* ==========================================================
+   CONTENU
+========================================================== */
+
+.hiking-detail-content {
+    font-size: 16px;
+    line-height: 1.8;
+
+    color: #475569;
+}
+
+.hiking-detail-content p {
+    margin: 0 0 18px;
+}
+
+.hiking-detail-content p:last-child {
+    margin-bottom: 0;
+}
+
+
+/* ==========================================================
+   GALERIE
+========================================================== */
+
+.hiking-detail-gallery {
+    margin-top: 20px;
+    margin-bottom: 70px;
+}
+
+.hiking-detail-gallery-header {
+    margin-bottom: 28px;
+}
+
+.hiking-detail-gallery-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 18px;
+}
+
+.hiking-detail-gallery-item {
+    margin: 0;
+
+    overflow: hidden;
+
+    border-radius: 14px;
+
+    background: #f1f5f9;
+}
+
+.hiking-detail-gallery-item img {
+    display: block;
+
+    width: 100%;
+    height: 250px;
+
+    object-fit: cover;
+
+    transition: transform 0.4s ease;
+}
+
+.hiking-detail-gallery-item:hover img {
+    transform: scale(1.03);
+}
+
+.hiking-detail-gallery-item figcaption {
+    padding: 12px 14px;
+
+    font-size: 13px;
+
+    color: #64748b;
+
+    background: #ffffff;
+}
+
+
+/* ==========================================================
+   TRACE GPS
+========================================================== */
+
+.hiking-detail-gpx {
+    display: flex;
+    justify-content: center;
+
+    margin: 20px 0 70px;
+}
+
+.hiking-detail-gpx a {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+
+    padding: 11px 17px;
+
+    border-radius: 9px;
+
+    background: #111827;
+
+    color: #ffffff;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    text-decoration: none;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+.hiking-detail-gpx a:hover {
+    background: #374151;
+
+    transform: translateY(-2px);
+}
+
+
+/* ==========================================================
+   PIED DE PAGE
+========================================================== */
+
+.hiking-detail-footer {
+    padding-top: 35px;
+
+    border-top: 1px solid #e5e7eb;
+}
+
+
+/* ==========================================================
+   RESPONSIVE — TABLETTE
+========================================================== */
+
+@media (max-width: 900px) {
+
+    .hiking-detail {
+        padding: 55px 0 80px;
+    }
+
+    .hiking-detail-stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hiking-detail-stat:nth-child(4n) {
+        border-right: 1px solid #e5e7eb;
+    }
+
+    .hiking-detail-stat:nth-child(2n) {
+        border-right: none;
+    }
+
+    .hiking-detail-stat:nth-child(n + 3) {
+        border-top: 1px solid #e5e7eb;
+    }
+
+    .hiking-detail-gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+/* ==========================================================
+   RESPONSIVE — MOBILE
+========================================================== */
+
+@media (max-width: 600px) {
+
+    .hiking-detail {
+        padding: 40px 0 65px;
+    }
+
+    .hiking-detail-container {
+        width: 90%;
+    }
+
+    .hiking-detail-back {
+        margin-bottom: 32px;
+    }
+
+    .hiking-detail-header {
+        margin-bottom: 32px;
+    }
+
+    .hiking-detail-header h1 {
+        font-size: 38px;
+        letter-spacing: -1px;
+    }
+
+    .hiking-detail-intro {
+        font-size: 16px;
+    }
+
+    .hiking-detail-hero-image {
+        margin-bottom: 30px;
+        border-radius: 14px;
+    }
+
+    .hiking-detail-hero-image img {
+        max-height: 380px;
+    }
+
+    .hiking-detail-stats {
+        grid-template-columns: 1fr 1fr;
+
+        margin-bottom: 55px;
+
+        border-radius: 12px;
+    }
+
+    .hiking-detail-stat {
+        min-height: 90px;
+
+        padding: 17px;
+    }
+
+    .hiking-detail-section {
+        margin-bottom: 55px;
+    }
+
+    .hiking-detail-section h2,
+    .hiking-detail-gallery-header h2 {
+        font-size: 27px;
+    }
+
+    .hiking-detail-gallery-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hiking-detail-gallery-item img {
+        height: 230px;
+    }
+}
+
+
+/* ==========================================================
+   ÉQUIPEMENTS
+========================================================== */
+
+.hiking-detail-equipment {
+    margin-top: 80px;
+}
+
+
+.hiking-detail-equipment-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 24px;
+
+    margin-top: 35px;
+}
+
+
+/* ==========================================================
+   CARTE ÉQUIPEMENT
+========================================================== */
+
+.hiking-detail-equipment-card {
+
+    overflow: hidden;
+
+    background: #ffffff;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 16px;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+.hiking-detail-equipment-card:hover {
+
+    transform: translateY(-4px);
+
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+
+/* ==========================================================
+   IMAGE
+========================================================== */
+
+.hiking-detail-equipment-image {
+
+    width: 100%;
+
+    height: 180px;
+
+    overflow: hidden;
+
+    background: #f3f4f6;
+}
+
+
+.hiking-detail-equipment-image img {
+
+    display: block;
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: transform 0.4s ease;
+}
+
+
+.hiking-detail-equipment-card:hover
+.hiking-detail-equipment-image img {
+
+    transform: scale(1.04);
+}
+
+
+/* ==========================================================
+   CONTENU
+========================================================== */
+
+.hiking-detail-equipment-content {
+
+    padding: 20px;
+}
+
+
+.hiking-detail-equipment-content h3 {
+
+    margin: 0 0 8px;
+
+    font-size: 1.1rem;
+
+    color: #111827;
+}
+
+
+.hiking-detail-equipment-content p {
+
+    margin: 0;
+
+    color: #6b7280;
+
+    line-height: 1.6;
+
+    font-size: 0.9rem;
+}
+
+
+@media (max-width: 900px) {
+
+    .hiking-detail-equipment-grid {
+
+        grid-template-columns: repeat(2, 1fr);
+
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .hiking-detail-equipment-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .hiking-detail-equipment-image {
+
+        height: 200px;
+
+    }
+
+}

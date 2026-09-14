@@ -1,0 +1,329 @@
+/* ==========================================================
+   RANDONNÉES — PAGE LISTE
+========================================================== */
+
+.hiking-page {
+    /*Espace entre la barre de navigation et le titre "Mes randonnées"*/
+    padding: 15px 0 90px;
+}
+
+.hiking-page-container {
+    width: min(1180px, 100%);
+    margin: 0 auto;
+}
+
+
+/* ==========================================================
+   EN-TÊTE
+========================================================== */
+
+.hiking-page-header {
+    text-align: center;
+    margin-bottom: 42px;
+}
+
+.hiking-page-header h1 {
+    margin: 0 0 10px;
+    font-size: 42px;
+    line-height: 1.15;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+.hiking-page-header p {
+    margin: 0 auto;
+    max-width: 650px;
+    font-size: 17px;
+    line-height: 1.6;
+    color: #6b7280;
+    text-align: center;
+}
+
+
+/* ==========================================================
+   LISTE
+========================================================== */
+
+.hiking-list {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+
+/* ==========================================================
+   CARTE RANDONNÉE
+========================================================== */
+
+.hiking-card {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+
+    min-height: 245px;
+
+    overflow: hidden;
+
+    background: #ffffff;
+
+    border: 1px solid #e5e7eb;
+    border-radius: 18px;
+
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.04);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
+}
+
+.hiking-card:hover {
+    transform: translateY(-3px);
+
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+
+    border-color: #d1d5db;
+}
+
+
+/* ==========================================================
+   IMAGE
+========================================================== */
+
+.hiking-card-image {
+    position: relative;
+
+    min-height: 245px;
+
+    overflow: hidden;
+
+    background: #e5e7eb;
+}
+
+.hiking-card-image img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: transform 0.45s ease;
+}
+
+.hiking-card:hover .hiking-card-image img {
+    transform: scale(1.035);
+}
+
+
+/* ==========================================================
+   CONTENU
+========================================================== */
+
+.hiking-card-content {
+    display: flex;
+    flex-direction: column;
+
+    padding: 28px 32px;
+}
+
+
+/* ==========================================================
+   MASSIF
+========================================================== */
+
+.hiking-card-massif {
+    display: inline-block;
+
+    width: fit-content;
+
+    margin-bottom: 8px;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+
+    color: #6b7280;
+}
+
+
+/* ==========================================================
+   TITRE
+========================================================== */
+
+.hiking-card-content h2 {
+    margin: 0 0 10px;
+
+    font-size: 26px;
+    line-height: 1.2;
+
+    font-weight: 700;
+
+    color: #111827;
+}
+
+
+/* ==========================================================
+   DESCRIPTION
+========================================================== */
+
+.hiking-card-description {
+    margin: 0 0 18px;
+
+    max-width: 700px;
+
+    font-size: 15px;
+    line-height: 1.55;
+
+    color: #6b7280;
+}
+
+
+/* ==========================================================
+   INFORMATIONS
+========================================================== */
+
+.hiking-card-stats {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 8px;
+
+    margin-bottom: 22px;
+}
+
+.hiking-card-stats span {
+    display: inline-flex;
+    align-items: center;
+
+    padding: 6px 10px;
+
+    border-radius: 7px;
+
+    background: #f3f4f6;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    color: #4b5563;
+}
+
+
+/* ==========================================================
+   BOUTON
+========================================================== */
+
+.hiking-card-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    width: fit-content;
+
+    margin-top: auto;
+
+    padding: 9px 14px;
+
+    border-radius: 8px;
+
+    background: #111827;
+
+    color: #ffffff;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    text-decoration: none;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+.hiking-card-button span {
+    font-size: 16px;
+
+    transition: transform 0.2s ease;
+}
+
+.hiking-card-button:hover {
+    background: #374151;
+}
+
+.hiking-card-button:hover span {
+    transform: translateX(3px);
+}
+
+
+/* ==========================================================
+   AUCUNE RANDONNÉE
+========================================================== */
+
+.hiking-empty {
+    margin: 30px 0;
+
+    text-align: center;
+
+    color: #6b7280;
+}
+
+
+/* ==========================================================
+   RESPONSIVE
+========================================================== */
+
+@media (max-width: 800px) {
+
+    .hiking-page {
+        padding: 50px 0 70px;
+    }
+
+    .hiking-page-header h1 {
+        font-size: 34px;
+    }
+
+    .hiking-card {
+        grid-template-columns: 1fr;
+    }
+
+    .hiking-card-image {
+        min-height: 220px;
+        height: 220px;
+    }
+
+    .hiking-card-content {
+        padding: 24px;
+    }
+
+}
+
+
+@media (max-width: 480px) {
+
+    .hiking-page-container {
+        width: 90%;
+    }
+
+    .hiking-page-header h1 {
+        font-size: 30px;
+    }
+
+    .hiking-page-header p {
+        font-size: 15px;
+    }
+
+    .hiking-card-image {
+        height: 190px;
+        min-height: 190px;
+    }
+
+    .hiking-card-content h2 {
+        font-size: 23px;
+    }
+
+    .hiking-card-content {
+        padding: 20px;
+    }
+
+}

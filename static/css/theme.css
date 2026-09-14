@@ -1,0 +1,1491 @@
+/* ==========================================================
+   THÈME — MODE SOMBRE
+========================================================== */
+
+body.dark-mode {
+
+    background-color: #111827;
+
+    color: #f9fafb;
+
+}
+
+
+/* ==========================================================
+   NAVBAR
+========================================================== */
+
+body.dark-mode .navbar {
+
+    background-color: #111827;
+
+}
+
+body.dark-mode .logo-text h2 {
+
+    color: #f9fafb;
+
+}
+
+body.dark-mode .logo-text p {
+
+    color: #9ca3af;
+
+}
+
+body.dark-mode .navigation a {
+
+    color: #d1d5db;
+
+}
+
+body.dark-mode .navigation a:hover {
+
+    color: #60a5fa;
+
+}
+
+
+/* ==========================================================
+   BOUTON THÈME
+========================================================== */
+
+body.dark-mode .theme-toggle {
+
+    background-color: #1f2937;
+
+    color: #f9fafb;
+
+}
+
+body.dark-mode .theme-toggle:hover {
+
+    background-color: #374151;
+
+}
+
+
+/* ==========================================================
+   CONTENU GÉNÉRAL
+========================================================== */
+
+body.dark-mode main {
+
+    background-color: #111827;
+
+}
+
+
+/* ==========================================================
+   PAGES
+========================================================== */
+
+body.dark-mode .projects-page,
+body.dark-mode .pd-page {
+
+    background-color: #111827;
+
+}
+
+body.dark-mode .projects-page-header h1,
+body.dark-mode .pd-title,
+body.dark-mode .pd-section h2 {
+
+    color: #f9fafb;
+
+}
+
+body.dark-mode .projects-page-header p,
+body.dark-mode .pd-intro,
+body.dark-mode .pd-content {
+
+    color: #9ca3af;
+
+}
+
+
+/* ==========================================================
+   CARTES PROJETS
+========================================================== */
+
+body.dark-mode .project-list-card,
+body.dark-mode .project-card {
+
+    background-color: #1f2937;
+
+    border-color: #374151;
+
+}
+
+body.dark-mode .project-list-card h2,
+body.dark-mode .project-card h3 {
+
+    color: #f9fafb;
+
+}
+
+body.dark-mode .project-list-card-description {
+
+    color: #9ca3af;
+
+}
+
+body.dark-mode .project-technology {
+
+    background-color: #374151;
+
+    border-color: #4b5563;
+
+    color: #d1d5db;
+
+}
+
+
+/* ==========================================================
+   RANDONNÉES — GÉNÉRAL
+========================================================== */
+
+body.dark-mode .hiking-page {
+
+    background-color: #111827;
+
+}
+
+body.dark-mode .hiking-page-header h1,
+body.dark-mode .hiking-card-content h2,
+body.dark-mode .hiking-detail-header h1,
+body.dark-mode .hiking-detail-section h2 {
+
+    color: #f9fafb;
+
+}
+
+body.dark-mode .hiking-page-header p,
+body.dark-mode .hiking-card-description,
+body.dark-mode .hiking-detail-intro,
+body.dark-mode .hiking-detail-content {
+
+    color: #9ca3af;
+
+}
+
+body.dark-mode .hiking-card,
+body.dark-mode .hiking-detail-stats,
+body.dark-mode .hiking-detail-equipment-card {
+
+    background-color: #1f2937;
+
+    border-color: #374151;
+
+}
+
+body.dark-mode .hiking-card-stats span {
+
+    background-color: #374151;
+
+    color: #d1d5db;
+
+}
+
+
+/* ==========================================================
+   RANDONNÉES — PAGE LISTE
+========================================================== */
+
+body.dark-mode .hiking-card {
+
+    background: #1f2937;
+
+    border-color: #374151;
+
+    box-shadow: 0 6px 20px rgba(0, 0, 0, .20);
+
+}
+
+body.dark-mode .hiking-card:hover {
+
+    border-color: #4b5563;
+
+    box-shadow: 0 12px 30px rgba(0, 0, 0, .25);
+
+}
+
+body.dark-mode .hiking-card-image {
+
+    background: #374151;
+
+}
+
+body.dark-mode .hiking-card-massif {
+
+    color: #9ca3af;
+
+}
+
+body.dark-mode .hiking-card-content h2 {
+
+    color: #f9fafb;
+
+}
+
+body.dark-mode .hiking-card-description {
+
+    color: #d1d5db;
+
+}
+
+body.dark-mode .hiking-card-stats span {
+
+    background: #374151;
+
+    color: #d1d5db;
+
+}
+
+body.dark-mode .hiking-card-button {
+
+    background: #f9fafb;
+
+    color: #2563eb;
+
+}
+
+body.dark-mode .hiking-card-button:hover {
+
+    background: #60a5fa;
+
+    color: #111827;
+
+}
+
+body.dark-mode .hiking-empty {
+
+    color: #d1d5db;
+
+}
+
+
+/* ==========================================================
+   RANDONNÉE — PAGE DÉTAIL
+========================================================== */
+
+
+/* ==========================================================
+   RETOUR
+========================================================== */
+
+body.dark-mode .hiking-detail-back {
+
+    color: #9ca3af;
+
+}
+
+body.dark-mode .hiking-detail-back:hover {
+
+    color: #f9fafb;
+
+}
+
+
+/* ==========================================================
+   EN-TÊTE
+========================================================== */
+
+body.dark-mode .hiking-detail-massif {
+
+    background: #26334a;
+
+    color: #60a5fa;
+
+}
+
+body.dark-mode .hiking-detail-header h1 {
+
+    color: #f9fafb;
+
+}
+
+body.dark-mode .hiking-detail-intro {
+
+    color: #d1d5db;
+
+}
+
+
+/* ==========================================================
+   IMAGE PRINCIPALE
+========================================================== */
+
+body.dark-mode .hiking-detail-hero-image {
+
+    background: #1f2937;
+
+}
+
+
+/* ==========================================================
+   STATISTIQUES
+========================================================== */
+
+body.dark-mode .hiking-detail-stats {
+
+    background: #1f2937;
+
+    border-color: #374151;
+
+}
+
+body.dark-mode .hiking-detail-stat {
+
+    border-right-color: #374151;
+
+}
+
+body.dark-mode .hiking-detail-stat-label {
+
+    color: #94a3b8;
+
+}
+
+body.dark-mode .hiking-detail-stat strong {
+
+    color: #f9fafb;
+
+}
+
+
+/* ==========================================================
+   SECTIONS
+========================================================== */
+
+body.dark-mode .hiking-detail-section-label {
+
+    color: #60a5fa;
+
+}
+
+body.dark-mode .hiking-detail-section h2,
+body.dark-mode .hiking-detail-gallery-header h2 {
+
+    color: #f9fafb;
+
+}
+
+body.dark-mode .hiking-detail-content {
+
+    color: #d1d5db;
+
+}
+
+
+/* ==========================================================
+   GALERIE
+========================================================== */
+
+body.dark-mode .hiking-detail-gallery-item {
+
+    background: #1f2937;
+
+}
+
+body.dark-mode .hiking-detail-gallery-item figcaption {
+
+    background: #1f2937;
+
+    color: #9ca3af;
+
+}
+
+
+/* ==========================================================
+   TRACE GPS
+========================================================== */
+
+body.dark-mode .hiking-detail-gpx a {
+
+    background: #f9fafb;
+
+    color: #2563eb;
+
+}
+
+body.dark-mode .hiking-detail-gpx a:hover {
+
+    background: #60a5fa;
+
+    color: #111827;
+
+}
+
+
+/* ==========================================================
+   PIED DE PAGE RANDONNÉE
+========================================================== */
+
+body.dark-mode .hiking-detail-footer {
+
+    border-top-color: #374151;
+
+}
+
+
+/* ==========================================================
+   ÉQUIPEMENTS
+========================================================== */
+
+body.dark-mode .hiking-detail-equipment-card {
+
+    background: #1f2937;
+
+    border-color: #374151;
+
+}
+
+body.dark-mode .hiking-detail-equipment-card:hover {
+
+    box-shadow: 0 12px 30px rgba(0, 0, 0, .25);
+
+}
+
+body.dark-mode .hiking-detail-equipment-image {
+
+    background: #374151;
+
+}
+
+body.dark-mode .hiking-detail-equipment-content h3 {
+
+    color: #f9fafb;
+
+}
+
+body.dark-mode .hiking-detail-equipment-content p {
+
+    color: #d1d5db;
+
+}
+
+
+/* ==========================================================
+   ARTICLES / NEWSLETTER — GÉNÉRAL
+========================================================== */
+
+body.dark-mode .newsletter-page,
+body.dark-mode .article-detail {
+
+    background-color: #111827;
+
+}
+
+
+/* ==========================================================
+   NEWSLETTER — EN-TÊTE
+========================================================== */
+
+body.dark-mode .newsletter-page-label {
+
+    color: #60a5fa;
+
+}
+
+body.dark-mode .newsletter-page-header h1 {
+
+    color: #f9fafb;
+
+}
+
+body.dark-mode .newsletter-page-header p {
+
+    color: #9ca3af;
+
+}
+
+
+/* ==========================================================
+   NEWSLETTER — SECTIONS
+========================================================== */
+
+body.dark-mode .newsletter-section-label {
+
+    color: #9ca3af;
+
+}
+
+body.dark-mode .newsletter-section-header h2 {
+
+    color: #f9fafb;
+
+}
+
+
+/* ==========================================================
+   NEWSLETTER — CARTES ARTICLES
+========================================================== */
+
+body.dark-mode .newsletter-article-card {
+
+    background: #1f2937;
+
+    border-color: #374151;
+
+    box-shadow: 0 6px 20px rgba(0, 0, 0, .15);
+
+}
+
+body.dark-mode .newsletter-article-card:hover {
+
+    border-color: #4b5563;
+
+    box-shadow: 0 18px 40px rgba(0, 0, 0, .25);
+
+}
+
+
+/* ==========================================================
+   NEWSLETTER — IMAGES
+========================================================== */
+
+body.dark-mode .newsletter-article-card-image {
+
+    background: #374151;
+
+}
+
+
+/* ==========================================================
+   NEWSLETTER — MÉTA
+========================================================== */
+
+body.dark-mode .newsletter-article-card-category {
+
+    color: #9ca3af;
+
+}
+
+body.dark-mode .newsletter-article-card-date {
+
+    color: #94a3b8;
+
+}
+
+
+/* ==========================================================
+   NEWSLETTER — TITRES
+========================================================== */
+
+body.dark-mode .newsletter-article-card h3 a {
+
+    color: #f9fafb;
+
+}
+
+body.dark-mode .newsletter-article-card h3 a:hover {
+
+    color: #60a5fa;
+
+}
+
+
+/* ==========================================================
+   NEWSLETTER — DESCRIPTION
+========================================================== */
+
+body.dark-mode .newsletter-article-card-content > p {
+
+    color: #d1d5db;
+
+}
+
+
+/* ==========================================================
+   NEWSLETTER — LIEN ARTICLE
+========================================================== */
+
+body.dark-mode .newsletter-article-card-link {
+
+    color: #f9fafb;
+
+}
+
+body.dark-mode .newsletter-article-card-link:hover {
+
+    color: #60a5fa;
+
+}
+
+
+/* ==========================================================
+   NEWSLETTER — AUCUN ARTICLE
+========================================================== */
+
+body.dark-mode .newsletter-empty {
+
+    border-color: #4b5563;
+
+    color: #d1d5db;
+
+}
+
+
+/* ==========================================================
+   ARTICLE — RETOUR
+========================================================== */
+
+body.dark-mode .article-detail-back {
+
+    color: #9ca3af;
+
+}
+
+body.dark-mode .article-detail-back:hover {
+
+    color: #f9fafb;
+
+}
+
+
+/* ==========================================================
+   ARTICLE — EN-TÊTE
+========================================================== */
+
+body.dark-mode .article-detail-category {
+
+    background: #26334a;
+
+    color: #60a5fa;
+
+}
+
+body.dark-mode .article-detail-title {
+
+    color: #f9fafb;
+
+}
+
+body.dark-mode .article-detail-intro {
+
+    color: #d1d5db;
+
+}
+
+body.dark-mode .article-detail-date {
+
+    color: #9ca3af;
+
+}
+
+
+/* ==========================================================
+   ARTICLE — IMAGE PRINCIPALE
+========================================================== */
+
+body.dark-mode .article-detail-hero-image {
+
+    background: #1f2937;
+
+}
+
+
+/* ==========================================================
+   ARTICLE — CONTENU
+========================================================== */
+
+body.dark-mode .article-detail-content {
+
+    color: #d1d5db;
+
+}
+
+
+/* ==========================================================
+   ARTICLE — PIED DE PAGE
+========================================================== */
+
+body.dark-mode .article-detail-footer {
+
+    border-top-color: #374151;
+
+}
+
+
+/* ==========================================================
+   CONTACT
+========================================================== */
+
+body.dark-mode .contact-page {
+
+    background-color: #111827;
+
+}
+
+body.dark-mode .contact-page h1,
+body.dark-mode .contact-page h2 {
+
+    color: #f9fafb;
+
+}
+
+
+/* ==========================================================
+   FOOTER
+========================================================== */
+
+body.dark-mode footer {
+
+    background-color: #111827;
+
+    color: #9ca3af;
+
+}
+
+
+/* ==========================================================
+   PAGE D'ACCUEIL — MES PROJETS
+========================================================== */
+
+body.dark-mode .projects-preview {
+
+    background: #111827;
+
+}
+
+body.dark-mode .projects-preview-container {
+
+    background: #1f2937;
+
+}
+
+body.dark-mode .projects-preview-header h2 {
+
+    color: #f9fafb;
+
+}
+
+body.dark-mode .projects-preview-header p {
+
+    color: #d1d5db;
+
+}
+
+body.dark-mode .projects-preview-link {
+
+    color: #60a5fa;
+
+}
+
+body.dark-mode .projects-preview-link:hover {
+
+    color: #93c5fd;
+
+}
+
+body.dark-mode .projects-empty {
+
+    color: #d1d5db;
+
+}
+
+
+/* ==========================================================
+   MES PROJETS — CARTES
+========================================================== */
+
+body.dark-mode .project-card {
+
+    background: #1f2937;
+
+    border-color: #374151;
+
+}
+
+body.dark-mode .project-card-content h3 {
+
+    color: #f9fafb;
+
+}
+
+body.dark-mode .project-card-content p {
+
+    color: #d1d5db;
+
+}
+
+body.dark-mode .project-card-category {
+
+    background: #eef3ff;
+
+    color: #2563eb;
+
+}
+
+body.dark-mode .project-card-button {
+
+    background: #f9fafb;
+
+    border-color: #d1d5db;
+
+    color: #2563eb;
+
+}
+
+body.dark-mode .project-card-button:hover {
+
+    background: #2563eb;
+
+    border-color: #2563eb;
+
+    color: #ffffff;
+
+}
+
+
+/* ==========================================================
+   PAGE D'ACCUEIL — EXPERTISE
+========================================================== */
+
+body.dark-mode .expertise-container {
+
+    background: #1f2937;
+
+    box-shadow: 0 12px 35px rgba(0, 0, 0, .20);
+
+}
+
+body.dark-mode .expertise-card:not(:last-child) {
+
+    border-right-color: #374151;
+
+}
+
+body.dark-mode .expertise-icon {
+
+    background: #26334a;
+
+}
+
+body.dark-mode .expertise-icon i {
+
+    color: #60a5fa;
+
+}
+
+body.dark-mode .expertise-text h3 {
+
+    color: #f9fafb;
+
+}
+
+body.dark-mode .expertise-text p {
+
+    color: #d1d5db;
+
+}
+
+
+/* ==========================================================
+   PAGE D'ACCUEIL — À PROPOS DE MOI
+========================================================== */
+
+body.dark-mode .about-icon {
+
+    border-color: #60a5fa;
+
+}
+
+body.dark-mode .about-icon i {
+
+    color: #60a5fa;
+
+}
+
+body.dark-mode .about-text h2 {
+
+    color: #f9fafb;
+
+}
+
+body.dark-mode .about-text p {
+
+    color: #d1d5db;
+
+}
+
+body.dark-mode .about-card {
+
+    background: #1f2937;
+
+    box-shadow: 0 15px 35px rgba(0, 0, 0, .20);
+
+}
+
+body.dark-mode .about-item:not(:last-child) {
+
+    border-right-color: #374151;
+
+}
+
+body.dark-mode .about-item i {
+
+    color: #60a5fa;
+
+}
+
+body.dark-mode .about-item h3 {
+
+    color: #f9fafb;
+
+}
+
+body.dark-mode .about-item p {
+
+    color: #d1d5db;
+
+}
+
+
+/* ==========================================================
+   PAGE DÉTAIL PROJET
+========================================================== */
+
+
+/* ==========================================================
+   RETOUR
+========================================================== */
+
+body.dark-mode .pd-back {
+
+    color: #9ca3af;
+
+}
+
+body.dark-mode .pd-back:hover {
+
+    color: #60a5fa;
+
+}
+
+
+/* ==========================================================
+   EN-TÊTE
+========================================================== */
+
+body.dark-mode .pd-category {
+
+    background: #26334a;
+
+    color: #60a5fa;
+
+}
+
+body.dark-mode .pd-intro {
+
+    color: #d1d5db;
+
+}
+
+
+/* ==========================================================
+   TECHNOLOGIES
+========================================================== */
+
+body.dark-mode .pd-technology {
+
+    border-color: #374151;
+
+    background: #1f2937;
+
+    color: #d1d5db;
+
+}
+
+
+/* ==========================================================
+   LIENS / BOUTONS
+========================================================== */
+
+body.dark-mode .pd-button {
+
+    border-color: #374151;
+
+    background: #1f2937;
+
+    color: #60a5fa;
+
+}
+
+body.dark-mode .pd-button:hover {
+
+    background: #2563eb;
+
+    border-color: #2563eb;
+
+    color: #ffffff;
+
+}
+
+
+/* ==========================================================
+   IMAGE PRINCIPALE
+========================================================== */
+
+body.dark-mode .pd-hero-image {
+
+    background: #1f2937;
+
+}
+
+
+/* ==========================================================
+   SECTIONS
+========================================================== */
+
+body.dark-mode .pd-section-label,
+body.dark-mode .pd-section-number {
+
+    color: #9ca3af;
+
+}
+
+body.dark-mode .pd-content {
+
+    color: #d1d5db;
+
+}
+
+
+/* ==========================================================
+   PRÉSENTATION
+========================================================== */
+
+body.dark-mode .pd-about {
+
+    background: #1f2937;
+
+    border-color: #374151;
+
+}
+
+body.dark-mode .pd-about h2 {
+
+    color: #f9fafb;
+
+}
+
+
+/* ==========================================================
+   ÉTAPES DU PROJET
+========================================================== */
+
+body.dark-mode .pd-story {
+
+    border-left-color: #374151;
+
+}
+
+body.dark-mode .pd-story::before {
+
+    background: #60a5fa;
+
+}
+
+
+/* ==========================================================
+   GALERIE
+========================================================== */
+
+body.dark-mode .pd-gallery-header h2 {
+
+    color: #f9fafb;
+
+}
+
+body.dark-mode .pd-gallery-item {
+
+    border-color: #374151;
+
+    background: #1f2937;
+
+}
+
+body.dark-mode .pd-gallery-item figcaption {
+
+    color: #9ca3af;
+
+}
+
+
+/* ==========================================================
+   FOOTER DE LA PAGE
+========================================================== */
+
+body.dark-mode .pd-footer {
+
+    border-top-color: #374151;
+
+}
+
+
+
+/* ==========================================================
+   PAGE CONTACT — MODE SOMBRE
+========================================================== */
+
+
+/* ==========================================================
+   PAGE
+========================================================== */
+
+body.dark-mode .contact-page {
+
+    background: #111827;
+
+}
+
+
+/* ==========================================================
+   EN-TÊTE
+========================================================== */
+
+body.dark-mode .contact-page-label {
+
+    color: #60a5fa;
+
+}
+
+body.dark-mode .contact-page-header h1 {
+
+    color: #f9fafb;
+
+}
+
+body.dark-mode .contact-page-header p {
+
+    color: #9ca3af;
+
+}
+
+
+/* ==========================================================
+   CARTE PRINCIPALE
+========================================================== */
+
+body.dark-mode .contact-section {
+
+    background: transparent;
+
+}
+
+body.dark-mode .contact-grid {
+
+    background: transparent;
+
+}
+
+
+/* ==========================================================
+   FORMULAIRE
+========================================================== */
+
+body.dark-mode .contact-form-container {
+
+    background: #1f2937;
+
+    border-color: #374151;
+
+    box-shadow: 0 12px 35px rgba(0, 0, 0, .20);
+
+}
+
+body.dark-mode .contact-form-container h2 {
+
+    color: #f9fafb;
+
+}
+
+body.dark-mode .contact-form-intro {
+
+    color: #9ca3af;
+
+}
+
+
+/* ==========================================================
+   CHAMPS
+========================================================== */
+
+body.dark-mode .contact-form-field label {
+
+    color: #f9fafb;
+
+}
+
+body.dark-mode .contact-form-field input,
+body.dark-mode .contact-form-field textarea {
+
+    background: #111827;
+
+    border-color: #4b5563;
+
+    color: #f9fafb;
+
+}
+
+body.dark-mode .contact-form-field input::placeholder,
+body.dark-mode .contact-form-field textarea::placeholder {
+
+    color: #9ca3af;
+
+}
+
+body.dark-mode .contact-form-field input:focus,
+body.dark-mode .contact-form-field textarea:focus {
+
+    background: #111827;
+
+    border-color: #60a5fa;
+
+    outline: none;
+
+    box-shadow: 0 0 0 3px rgba(96, 165, 250, .12);
+
+}
+
+
+/* ==========================================================
+   BOUTON
+========================================================== */
+
+body.dark-mode .contact-form-button {
+
+    background: #f9fafb;
+
+    border-color: #f9fafb;
+
+    color: #111827;
+
+}
+
+body.dark-mode .contact-form-button:hover {
+
+    background: #60a5fa;
+
+    border-color: #60a5fa;
+
+    color: #111827;
+
+}
+
+
+/* ==========================================================
+   MESSAGE DE CONFIDENTIALITÉ
+========================================================== */
+
+body.dark-mode .contact-privacy {
+
+    color: #9ca3af;
+
+}
+
+body.dark-mode .contact-privacy a {
+
+    color: #60a5fa;
+
+}
+
+body.dark-mode .contact-privacy a:hover {
+
+    color: #93c5fd;
+
+}
+
+
+/* ==========================================================
+   PANNEAU INFORMATIONS
+========================================================== */
+
+body.dark-mode .contact-info {
+
+    background: #1f2937;
+
+    border-color: #374151;
+
+    box-shadow: 0 12px 35px rgba(0, 0, 0, .20);
+
+}
+
+body.dark-mode .contact-info-label {
+
+    color: #60a5fa;
+
+}
+
+body.dark-mode .contact-info-header h2 {
+
+    color: #f9fafb;
+
+}
+
+body.dark-mode .contact-info-header p {
+
+    color: #d1d5db;
+
+}
+
+
+/* ==========================================================
+   ÉLÉMENTS D'INFORMATION
+========================================================== */
+
+body.dark-mode .contact-info-item {
+
+    border-top-color: #374151;
+
+}
+
+body.dark-mode .contact-info-item h3 {
+
+    color: #f9fafb;
+
+}
+
+body.dark-mode .contact-info-item p {
+
+    color: #9ca3af;
+
+}
+
+
+/* ==========================================================
+   ICÔNES
+========================================================== */
+
+body.dark-mode .contact-info-icon {
+
+    background: #26334a;
+
+}
+
+body.dark-mode .contact-info-icon i {
+
+    color: #60a5fa;
+
+}
+
+
+
+/* ==========================================================
+   PAGE CONFIDENTIALITÉ — MODE SOMBRE
+========================================================== */
+
+
+/* ==========================================================
+   PAGE
+========================================================== */
+
+body.dark-mode .privacy-page {
+
+    background: #111827;
+
+}
+
+
+/* ==========================================================
+   EN-TÊTE
+========================================================== */
+
+body.dark-mode .privacy-page-label {
+
+    color: #60a5fa;
+
+}
+
+body.dark-mode .privacy-page-header h1 {
+
+    color: #f9fafb;
+
+}
+
+body.dark-mode .privacy-page-header p {
+
+    color: #9ca3af;
+
+}
+
+
+/* ==========================================================
+   CONTENU
+========================================================== */
+
+body.dark-mode .privacy-content {
+
+    color: #d1d5db;
+
+}
+
+
+/* ==========================================================
+   SECTIONS
+========================================================== */
+
+body.dark-mode .privacy-section h2 {
+
+    color: #f9fafb;
+
+}
+
+body.dark-mode .privacy-section p {
+
+    color: #d1d5db;
+
+}
+
+body.dark-mode .privacy-section strong {
+
+    color: #f9fafb;
+
+}
+
+
+/* ==========================================================
+   LISTES
+========================================================== */
+
+body.dark-mode .privacy-section ul {
+
+    color: #d1d5db;
+
+}
+
+body.dark-mode .privacy-section li {
+
+    color: #d1d5db;
+
+}
+
+
+/* ==========================================================
+   LIENS
+========================================================== */
+
+body.dark-mode .privacy-section a {
+
+    color: #60a5fa;
+
+}
+
+body.dark-mode .privacy-section a:hover {
+
+    color: #93c5fd;
+
+}
+
+
+/* ==========================================================
+   DERNIÈRE MISE À JOUR
+========================================================== */
+
+body.dark-mode .privacy-update {
+
+    color: #6b7280;
+
+}

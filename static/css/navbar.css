@@ -1,0 +1,108 @@
+/* ==========================================================
+   NAVBAR
+========================================================== */
+
+.navbar {
+    background-color: white;
+    padding: 8px 0;
+}
+
+.navbar-container {
+    width: 100%;
+    max-width: 1400px;
+
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+
+    align-items: center;
+
+    padding: 8px 2rem;
+}
+
+/* ==========================
+   Navigation
+========================== */
+
+.navigation {
+    display: flex;
+    justify-content: center;
+    justify-self: center;
+
+    gap: 2.5rem;
+
+    font-size: 1.15rem;
+}
+
+.navigation a {
+    text-decoration: none;
+    color: #374151;
+    font-weight: 500;
+
+    transition:
+        color .25s ease,
+        transform .25s ease;
+}
+
+.navigation a:hover {
+    color: #2563eb;
+    transform: translateY(-2px);
+}
+
+/* ==========================
+   Logo
+========================== */
+
+.logo {
+    display: flex;
+    align-items: center;
+    justify-self: start;
+
+    gap: 16px;
+}
+
+.logo-icon img {
+    width: 58px;
+    height: auto;
+    display: block;
+}
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.logo-text h2 {
+    margin: 0;
+
+    font-size: 1.55rem;
+    font-weight: 700;
+    line-height: 1.05;
+
+    color: #111827;
+}
+
+.logo-text p {
+    margin: 0;
+
+    font-size: 0.82rem;
+    line-height: 1.15;
+
+    color: #6b7280;
+}
+
+/* ==========================
+   Bouton thème
+========================== */
+
+.theme-toggle {
+    justify-self: end;
+}
+
+.theme-toggle:hover {
+    background: white;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px rgba(0,0,0,.08);
+}
