@@ -697,53 +697,564 @@
 
 
 /* ==========================================================
-   RESPONSIVE
+   RESPONSIVE — HOME
 ========================================================== */
 
-@media (max-width: 1200px) {
 
-    .projects-preview-container {
-        width: calc(100% - 4rem);
+/* ==========================================================
+   TABLETTE / ÉCRAN INTERMÉDIAIRE
+   701px → 1199px
+========================================================== */
+
+@media (max-width: 1199px) {
+
+    /* ======================================================
+       HERO
+    ====================================================== */
+
+    .hero {
+        min-height: 46vh;
+
+        background-size: 62% auto;
+        background-position: 118% center;
+    }
+
+    .hero-overlay {
+        min-height: 46vh;
+    }
+
+    .hero-container {
+        padding: 0 40px;
+    }
+
+    .hero-content {
+        max-width: 520px;
     }
 
 
+    /* ======================================================
+       EXPERTISE
+    ====================================================== */
+
+    .expertise {
+        padding: 45px 24px;
+    }
+
+    .expertise-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .expertise-card {
+        padding: 28px;
+    }
+
+    .expertise-card:nth-child(2n) {
+        border-right: none;
+    }
+
+    .expertise-card:nth-child(-n+2) {
+        border-bottom: 1px solid #eceff5;
+    }
+
+
+    /* ======================================================
+       ABOUT
+    ====================================================== */
+
+    .about {
+        padding: 65px 24px;
+    }
+
+    .about-container {
+        grid-template-columns: 1fr;
+        gap: 45px;
+    }
+
+    .about-card {
+        width: 100%;
+    }
+
+
+    /* ======================================================
+       PROJETS
+    ====================================================== */
+
+    .projects-preview {
+        padding: 0 24px;
+    }
+
+    .projects-preview-container {
+        width: 100%;
+    }
+
     .projects-preview-grid {
-        grid-template-columns:
-            repeat(2, minmax(0, 1fr));
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 }
 
 
-@media (max-width: 700px) {
+/* ==========================================================
+   MOBILE
+   ≤ 700px
+========================================================== */
+
+@media (max-width: 768px) {
+
+    /* ======================================================
+       HERO
+    ====================================================== */
+
+    .hero {
+        min-height: auto;
+
+        background-size: cover;
+        background-position: center center;
+    }
+
+    .hero-overlay {
+        min-height: auto;
+
+        background:
+            linear-gradient(
+                180deg,
+                rgba(255,255,255,.94) 0%,
+                rgba(255,255,255,.88) 55%,
+                rgba(255,255,255,.72) 100%
+            );
+    }
+
+    .hero-container {
+        padding: 60px 20px 55px;
+    }
+
+    .hero-content {
+        width: 100%;
+        max-width: 100%;
+
+        gap: .9rem;
+    }
+
+    .hero-title {
+        font-size: clamp(2.5rem, 11vw, 3.4rem);
+
+        line-height: .98;
+        letter-spacing: -1.5px;
+    }
+
+    .hero-subtitle {
+        font-size: 1.35rem;
+        line-height: 1.3;
+    }
+
+    .hero-description {
+        max-width: 100%;
+
+        font-size: 1rem;
+        line-height: 1.7;
+    }
+
+    .hero-buttons {
+        width: 100%;
+
+        flex-direction: column;
+        align-items: stretch;
+
+        gap: .75rem;
+
+        margin-top: .5rem;
+    }
+
+    .btn-primary {
+        width: 100%;
+        height: 54px;
+    }
+
+
+    /* ======================================================
+       EXPERTISE
+    ====================================================== */
+
+    .expertise {
+        padding: 35px 16px;
+    }
+
+    .expertise-container {
+        grid-template-columns: 1fr;
+
+        border-radius: 20px;
+    }
+
+    .expertise-card {
+        padding: 24px 20px;
+
+        gap: 18px;
+    }
+
+    .expertise-card:not(:last-child) {
+        border-right: none;
+        border-bottom: 1px solid #eceff5;
+    }
+
+    .expertise-card:last-child {
+        border-bottom: none;
+    }
+
+    .expertise-icon {
+        width: 56px;
+        height: 56px;
+
+        border-radius: 16px;
+    }
+
+    .expertise-icon i {
+        font-size: 26px;
+    }
+
+    .expertise-text {
+        min-width: 0;
+    }
+
+    .expertise-text h3 {
+        margin: 0 0 7px;
+
+        font-size: 1.05rem;
+        line-height: 1.25;
+    }
+
+    .expertise-text p {
+        font-size: .9rem;
+        line-height: 1.6;
+    }
+
+
+    /* ======================================================
+       ABOUT
+    ====================================================== */
+
+    .about {
+        padding: 50px 16px;
+    }
+
+    .about-container {
+        grid-template-columns: 1fr;
+
+        gap: 30px;
+    }
+
+    .about-left {
+        gap: 18px;
+    }
+
+    .about-icon {
+        width: 62px;
+        height: 62px;
+    }
+
+    .about-icon i {
+        font-size: 27px;
+    }
+
+    .about-text {
+        min-width: 0;
+    }
+
+    .about-text h2 {
+        margin-bottom: 12px;
+
+        font-size: 1.65rem;
+        line-height: 1.2;
+    }
+
+    .about-text p {
+        font-size: .95rem;
+        line-height: 1.7;
+    }
+
+
+    /* ======================================================
+       CARTE À PROPOS
+    ====================================================== */
+
+    .about-card {
+        grid-template-columns: 1fr;
+
+        border-radius: 18px;
+    }
+
+    .about-item {
+        gap: 15px;
+
+        padding: 20px;
+    }
+
+    .about-item:not(:last-child) {
+        border-right: none;
+        border-bottom: 1px solid #eceff5;
+    }
+
+    .about-item:last-child {
+        border-bottom: none;
+    }
+
+    .about-item i {
+        font-size: 26px;
+
+        flex-shrink: 0;
+    }
+
+    .about-item h3 {
+        margin-bottom: 6px;
+
+        font-size: .98rem;
+    }
+
+    .about-item p {
+        font-size: .9rem;
+        line-height: 1.6;
+    }
+
+
+    /* ======================================================
+       PROJETS
+    ====================================================== */
 
     .projects-preview {
-        padding: 40px 0;
+        padding: 35px 16px;
     }
-
 
     .projects-preview-container {
-        width: calc(100% - 2rem);
+        width: 100%;
 
-        padding: 25px 18px 22px;
+        padding: 25px 16px 24px;
+
+        border-radius: 18px;
     }
-
 
     .projects-preview-header {
-        margin-bottom: 30px;
+        margin-bottom: 24px;
     }
-
 
     .projects-preview-header h2 {
-        font-size: 1.6rem;
+        font-size: 1.55rem;
+        line-height: 1.2;
     }
 
+    .projects-preview-header p {
+        font-size: .82rem;
+        line-height: 1.5;
+    }
 
     .projects-preview-grid {
         grid-template-columns: 1fr;
+
+        gap: 16px;
     }
 
 
+    /* ======================================================
+       CARTES PROJET
+    ====================================================== */
+
+    .project-card {
+        width: 100%;
+        height: 160px;
+    }
+
+    .project-card-image {
+        flex: 0 0 110px;
+    }
+
+    .project-card-content {
+        padding: 15px 14px;
+    }
+
+    .project-card-content h3 {
+        margin-bottom: 7px;
+
+        font-size: .92rem;
+        line-height: 1.25;
+    }
+
+    .project-card-category {
+        margin-bottom: 7px;
+
+        padding: 3px 7px;
+
+        font-size: .63rem;
+    }
+
+    .project-card-content p {
+        font-size: .74rem;
+        line-height: 1.55;
+    }
+
+    .project-card-button {
+        padding: 7px 10px;
+
+        font-size: .68rem;
+    }
+
+    .projects-preview-footer {
+        margin-top: 24px;
+    }
+
+    .projects-preview-link {
+        font-size: .84rem;
+    }
+}
+
+
+/* ==========================================================
+   PETIT MOBILE
+   ≤ 420px
+========================================================== */
+
+@media (max-width: 420px) {
+
+    /* ======================================================
+       HERO
+    ====================================================== */
+
+    .hero-container {
+        padding: 50px 18px 45px;
+    }
+
+    .hero-title {
+        font-size: 2.45rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.2rem;
+    }
+
+    .hero-description {
+        font-size: .94rem;
+    }
+
+
+    /* ======================================================
+       EXPERTISE
+    ====================================================== */
+
+    .expertise {
+        padding: 30px 12px;
+    }
+
+    .expertise-card {
+        padding: 21px 16px;
+
+        gap: 15px;
+    }
+
+    .expertise-icon {
+        width: 52px;
+        height: 52px;
+    }
+
+    .expertise-icon i {
+        font-size: 24px;
+    }
+
+    .expertise-text h3 {
+        font-size: 1rem;
+    }
+
+    .expertise-text p {
+        font-size: .86rem;
+    }
+
+
+    /* ======================================================
+       ABOUT
+    ====================================================== */
+
+    .about {
+        padding: 45px 12px;
+    }
+
+    .about-left {
+        gap: 14px;
+    }
+
+    .about-icon {
+        width: 56px;
+        height: 56px;
+    }
+
+    .about-icon i {
+        font-size: 24px;
+    }
+
+    .about-text h2 {
+        font-size: 1.5rem;
+    }
+
+    .about-text p {
+        font-size: .92rem;
+    }
+
+    .about-item {
+        padding: 18px;
+    }
+
+    .about-item p {
+        font-size: .86rem;
+    }
+
+
+    /* ======================================================
+       PROJETS
+    ====================================================== */
+
+    .projects-preview {
+        padding: 30px 12px;
+    }
+
+    .projects-preview-container {
+        padding: 22px 13px 20px;
+    }
+
+    .projects-preview-header h2 {
+        font-size: 1.45rem;
+    }
+
+    .projects-preview-header p {
+        font-size: .8rem;
+    }
+
+
+    /* ======================================================
+       CARTES PROJET
+    ====================================================== */
+
     .project-card {
         height: 150px;
+    }
+
+    .project-card-image {
+        flex: 0 0 95px;
+    }
+
+    .project-card-content {
+        padding: 13px 11px;
+    }
+
+    .project-card-content h3 {
+        font-size: .86rem;
+    }
+
+    .project-card-category {
+        font-size: .6rem;
+    }
+
+    .project-card-content p {
+        font-size: .68rem;
+        line-height: 1.5;
+    }
+
+    .project-card-button {
+        padding: 6px 9px;
+
+        font-size: .64rem;
     }
 }
